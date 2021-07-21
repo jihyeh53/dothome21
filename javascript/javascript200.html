@@ -490,6 +490,36 @@
 
 <hr>
 
+<div id="sample101" class="sample">
+    <h2>102. 테이블 만들기2 <span class="dot"></span></h2>
+    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    document.write("*** 102. 테이블 만들기2***<br>");
+
+    let num = 100;
+    let table = "&lt;table&gt;";
+
+    for( let i=1; i&lt;=10; i++){
+        table +="&lt;tr&gt;";
+        for(let j=1; j&lt;=10; j++ ){
+            table +="&lt;td&gt;"+num+"&lt;/td&gt;";
+            num--;
+        }
+        table +="&lt;/tr&gt;";
+    }
+
+    table += "&lt;/table&gt;";
+
+    document.write(table);
+
+    document.write("&lt;br&gt;");
+    }
+</code></pre>
+    </div>
+</div>
+
+<hr>
+
 </code></pre>
         </div>
     </div>
@@ -717,7 +747,9 @@
 
             document.write(table);
 
-            document.w
+            document.write("<br>");
+
+        }
         //sample102
         //102. 테이블 만들기2
         {
@@ -730,7 +762,7 @@
                 table +="<tr>";
                 for(let j=1; j<=10; j++ ){
                     table +="<td>"+num+"</<td>";
-                    num++;
+                    num--;
                 }
                 table +="</tr>";
             }
@@ -740,7 +772,6 @@
             document.write(table);
 
             document.write("<br>");
-        }rite("<br>");
         }
     </script>
 </body>
