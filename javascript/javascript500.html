@@ -392,14 +392,17 @@
         //7월 26일 숙제
         //배열 데이터의 합을 출력하세요!!
         {
-            document.write("***배열 데이터의 합을 출력하세요!!***<br>");
+            const arr =[100, 200, 300, 400, 500];
 
-            const arr = [100, 200, 300, 400, 500];
+            document.write("***06. 배열 : 데이터의 합***<br>");    
 
-            for( let i=0; i<arr; i++){
-                sum += arr[i];
+            let sum = 0;
+
+            for(let i=0; i<5; i++) {
+            sum += arr[i];
             }
-            document.write(arr[i]);
+            document.write(sum);
+            document.write("<br><br>");
         }
 
     </script>
