@@ -5,72 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃 연습6</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #warp{}
+        #header{
+            height: 110px;
+            background-color: #d1c4e9 ;
+        }
+        #banner{
+            height: 750px;
+            background-color: #b39ddb ;
+        }
+        #contents{}
+        #container1{
+            width: 1200;
+            height: 2280px;
+            background-color: #7e57c2;
+        }
+        #container3{
+            width: 1200;
+            height: 1570px;
+            background-color: #673ab7;
+        }
+        #container4{
+            width: 1200;
+            height: 530px;
+            background-color: #5e35b1;
+        }
+        #footer{
+            height: 110px;
+            background-color: #512da8;
+        }
+        .container{
+            width: 1200px;
+            height: inherit;
+            background-color: rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+    </style>
 </head>
-<style>
-    @font-face {
-        font-family: 'twaysky';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twaysky.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    body{
-        font-family: 'twaysky';
-        background-color: #90caf9;
-        color: #fff;
-        font-size: 60px;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    .warp{
-        width: 1200px;
-        height: 5347px;
-        margin: 0 auto;
-    }
-    .header{
-        width: 1200px;
-        height: 110px;
-        line-height: 110px;
-        background-color: #9fa8da;
-    }
-    .banner{
-        width: 1200px;
-        height: 2277px;
-        line-height: 2277px;
-        background-color: #7986cb;
-    }
-    .content1{
-        width: 1200px;
-        height: 750px;
-        line-height: 750px;
-        background-color: #5c6bc0;
-    }
-    .content2{
-        width: 1200px;
-        height: 1570px;
-        line-height: 1570px;
-        background-color: #3f51b5 ;
-    }
-    .content3{
-        width: 1200px;
-        height: 530px;
-        line-height: 530px;
-        background-color: #3949ab ;
-    }
-    .footer{
-        width: 1200px;
-        height: 110px;
-        line-height: 110px;
-        background-color: #303f9f ;
-    }
-</style>
 <body>
-    <div class="warp">
-        <div class="header">header</div>
-        <div class="banner">banner</div>
-        <div class="content1">content1</div>
-        <div class="content2">content2</div>
-        <div class="content3">contnent3</div>
-        <div class="footer">footer</div>
+    <div>
+        <div id="warp">
+            <div id="header">
+                <div class="container"></div>
+            </div>
+               <!-- //header -->
+
+            <div id="banner">
+                <div class="container"></div>
+            </div>
+               <!-- //banner -->
+
+            <div id="contents">
+                <div id="container1">
+                    <div class="container"></div>
+                </div>
+                <div id="container2">
+                    <div class="container"></div>
+                </div>
+                <div id="container3">
+                    <div class="container"></div>
+            </div>
+           <!-- //contents -->
+
+            <div id="footer">
+                <div class="container"></div>
+                </div>
+            </div>
+        </div>
+           <!-- //footer -->
+
     </div>
+    <!-- //wrap -->
+
 </body>
 </html>
