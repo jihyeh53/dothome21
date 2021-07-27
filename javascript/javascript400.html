@@ -184,6 +184,15 @@
         .ol4::before{
             content:"데이터 제어하기 : ";
         }
+        .ol4::before{
+            content:"데이터 제어하기 : ";
+        }
+        .ol5::before{
+            content:"데이터 연습하기 : ";
+        }
+        .ol6::before{
+            content:"데이터 메서드 : ";
+        }
     </style>
 </head>
 <body>
@@ -195,7 +204,10 @@
         <li><a href="javascript100.html">객체(object)</a></li>
     </ol>
     <ol class="ol2">
-        <li><a href="javascript500.html">데이터</a></li>
+        <li><a href="javascript500.html">변수</a></li>
+        <li><a href="javascript500.html">상수</a></li>
+        <li><a href="javascript500.html">배열</a></li>
+        <li><a href="javascript500.html">객체</a></li>
     </ol>
     <ol class="ol3">
         <li><a href="javascript300.html">함수(function)</a></li>
@@ -204,9 +216,17 @@
         <li><a href="javascript200.html">조건문</a></li>
         <li><a href="javascript200.html">반복문</a></li>
     </ol>
-    <ol>
+    <ol class="ol5">
         <li><a href="javascript400.html">알고리즘</a></li>
     </ol>
+    <ol class="ol6">
+        <li><a href="javascript601.html">배열 메서드</a></li>
+        <li><a href="javascript602.html">문자열 메서드</a></li>
+        <li><a href="javascript603.html">브라우저 메서드</a></li>
+        <li><a href="javascript604.html">날짜 메서드</a></li>
+        <li><a href="javascript605.html">이벤트 메서드</a></li>
+    </ol>
+
 
     <h2 class="mt20">알고리즘</h2>
     <ul>
@@ -230,7 +250,6 @@
     for(var i=1; i&lt;=100; i++){
         document.write(i);
     }
-    document.write("&lt;br&gt;&lt;br&gt;");
 }
 
 </code></pre>
@@ -239,7 +258,7 @@
 
     <hr>
 
-    <div id="sample1" class="sample">
+    <div id="sample2" class="sample">
         <h2>02. 1부터 100까지 출력하기 : 짝수만 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
@@ -250,7 +269,6 @@
             document.write(i);
         }
     }
-    document.write("i&lt;bri&gt;i&lt;br&gt;");
 }
 //{
 //    for(i=0; i&lt;=100; i+=2){{
@@ -265,7 +283,7 @@
 
     <hr>
 
-    <div id="sample1" class="sample">
+    <div id="sample3" class="sample">
         <h2>03. 1부터 100까지 출력하기 : 5의 배수만 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
@@ -274,7 +292,6 @@
             document.write(i);
         }
     }
-    document.write("&lt;br&gt;&lt;br&gt;");
 }
 //{
 //    for( let i=1; i&lt;=100; i++){
@@ -290,7 +307,7 @@
 
     <hr>
 
-    <div id="sample1" class="sample">
+    <div id="sample4" class="sample">
         <h2>04.1부터 100까지 출력하기 : 짝수는 빨간색, 홀수는 파란색 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
@@ -304,7 +321,6 @@
 
         }
     }
-    document.write("&lt;br&gt;&lt;br&gt;");
 }
 </code></pre>
         </div>
@@ -312,7 +328,7 @@
 
     <hr>
 
-    <div id="sample1" class="sample">
+    <div id="sample5" class="sample">
         <h2>05.1부터 100까지 합 출력하기 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
@@ -325,8 +341,6 @@
         sum += i;
     }
     document.write(sum);
-
-    document.write("&lt;br&gt;&lt;br&gt;");
 }
 </code></pre>
         </div>
@@ -334,8 +348,8 @@
 
     <hr>
 
-    <div id="sample1" class="sample">
-        <h2>05. 구구단 출력하기 <span class="dot"></span></h2>
+    <div id="sample6" class="sample">
+        <h2>06. 구구단 출력하기 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     {
@@ -361,13 +375,97 @@
                 document.write(i + "*" + j,"=", +sum,"&lt;br&gt;");
             }
         }
-        document.write("&lt;br&gt;");
     }
 </code></pre>
         </div>
     </div>
 
     <hr>
+
+    <div id="sample7" class="sample">
+        <h2>07. 테이블 만들기 <span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+        document.write("*** 07. 테이블 만들기***<br>");
+
+        let num = 100;
+        let table = "&lt;table&gt;";
+
+        for( let i=1; i&lt;=10; i++){
+            table +="&lt;tr&gt;";
+            for(let j=1; j&lt;=10; j++ ){
+                table +="&lt;td&gt;"+num+"&lt;/td&gt;";
+                num--;
+            }
+            table +="&lt;/tr&gt;";
+        }
+
+        table += "&lt;/table&gt;";
+
+        document.write(table);
+    }
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample8" class="sample">
+        <h2>08. 테이블 만들기2 <span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    document.write("*** 08. 테이블 만들기2***<br>");
+
+    let num = 100;
+    let table = "&lt;table&gt;";
+
+    for( let i=1; i&lt;=10; i++){
+        table +="&lt;tr&gt;";
+        for(let j=1; j&lt;=10; j++ ){
+            table +="&lt;td&gt;"+num+"&lt;/td&gt;";
+            num--;
+        }
+        table +="&lt;/tr&gt;";
+    }
+
+    table += "&lt;/table&gt;";
+
+    document.write(table);
+    }
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>09. 테이블 만들기3 <span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    document.write("***09. 테이블 만들기3***<br>");
+
+    let num = 2;
+    let table = "&lt;table&gt;";
+
+    for( let i=2; i&lt;=10; i++){
+        table +="&lt;tr&gt;";
+        for(let j=2; j&lt;=10; j++ ){
+            table +="&lt;td&gt;"+num+"&lt;/td&gt;";
+            num+=2;
+        }
+        table +="&lt;/tr&gt;";
+    }
+
+    table += "&lt;/table&gt;";
+
+    document.write(table);
+    }
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
 
     <style>
         table {border-collapse: collapse;}
@@ -462,8 +560,8 @@
 
             document.write("<br><br>");
         }
-        //sample5
-        //05. 구구단 출력하기
+        //sample6
+        //06. 구구단 출력하기
         {
             document.write("*** 05.구구단 출력하기 ***<br>");
 
@@ -489,31 +587,8 @@
             }
             document.write("<br>");
         }
-        //sample6
-        //06. 테이블 만들기
-        {
-            document.write("*** 102. 테이블 만들기***<br>");
-
-            let num = 100;
-            let table = "<table>";
-
-            for( let i=1; i<=10; i++){
-                table +="<tr>";
-                for(let j=1; j<=10; j++ ){
-                    table +="<td>"+num+"</<td>";
-                    num--;
-                }
-                table +="</tr>";
-            }
-
-            table += "</table>";
-
-            document.write(table);
-
-            document.write("<br>");
-        }
         //sample7
-        //07. 테이블 만들기2
+        //07. 테이블 만들기
         {
             document.write("*** 07. 테이블 만들기***<br>");
 
@@ -536,9 +611,32 @@
             document.write("<br>");
         }
         //sample8
-        //08. 테이블 만들기3 - 짝수만
+        //08. 테이블 만들기2
         {
-            document.write("*** 08. 테이블 만들기3***<br>");
+            document.write("*** 08. 테이블 만들기2***<br>");
+
+            let num = 100;
+            let table = "<table>";
+
+            for( let i=1; i<=10; i++){
+                table +="<tr>";
+                for(let j=1; j<=10; j++ ){
+                    table +="<td>"+num+"</<td>";
+                    num--;
+                }
+                table +="</tr>";
+            }
+
+            table += "</table>";
+
+            document.write(table);
+
+            document.write("<br>");
+        }
+        //sample9
+        //09. 테이블 만들기3 - 짝수만
+        {
+            document.write("*** 09. 테이블 만들기3***<br>");
 
             let num = 2;
             let table = "<table>";

@@ -173,7 +173,7 @@
             margin-top: 20px;
         }
         .ol1::before{
-            content:"데이터 저장하기 : ";
+        content:"데이터 저장하기 : ";
         }
         .ol2::before{
             content:"데이터 불러오기 : ";
@@ -225,52 +225,28 @@
     </ol>
 
 
-    <h2 class="mt20">데이터 실행 : 함수</h2>
+    <h2 class="mt20">이벤트 메서드</h2>
     <ul>
-        <li a href=#smaple1>01. 선언적 함수</li>
-        <li a href=#smaple2>02. 익명 함수</li>
-        <li a href=#smaple3>03. 매개변수 함수</li>
-        <li a href=#smaple4>04. 리턴값 함수</li>
-        <li a href=#smaple5>05. 재귀 함수</li>
-        <li a href=#smaple6>06. 콜백 함수</li>
-        <li a href=#smaple7>07. 내부 함수</li>
-        <li a href=#smaple8>08. 객체 생성자 함수</li>
-        <li a href=#smaple9>09. 프로토타입 함수</li>
-        <li a href=#smaple10>10. 화살표 함수</li>
-        <li a href=#smaple11>11. 아규먼트 함수</li>
-        <li a href=#smaple12>12. 즉시실행 함수</li>
-        <li a href=#smaple13>13. 파라미터 함수</li>
+        <li><a href="#sample1">01. 변수 : 데이터 불러오기</li>
     </ul>
 
     <hr>
-
-    <div id="sample1" class="sample">
-        <h2>01. 선언적 함수 <span class="dot"></span></h2>
-        <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    function func(){
-        document.write("*** 01. 선언적 함수 ***<br>");
-        document.write("함수가 실행되었습니다.<br><br>");
-    }
-    func();
-    func();
-}
-</code></pre>
-        </div>
-    </div>
-
-    <hr>
-
     
-    <div id="sample2" class="sample">
-        <h2>02. 익명 함수 <span class="dot"></span></h2>
+    <div id="sample1" class="sample">
+        <h2>01. 변수 : 데이터 불러오기 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    const func = function(){
-        document.write("*** 02. 익명 함수 ***<br>");
-        document.write("함수가 실행되었습니다.<br><br>");
-    }
-    func();
+    document.write("***01. 변수 : 데이터 불러오기***<br>");
+
+    //let x =100;
+    //let x =200;
+    //let x =javascript;
+
+    let x = 100, y = 200; z = "javascript";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
 }
 </code></pre>
         </div>
@@ -278,85 +254,42 @@
 
     <hr>
 
-    <div id="sample3" class="sample">
-        <h2>03. 매개변수 함수 <span class="dot"></span></h2>
-        <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    function func(str){
-        document.write("*** 03. 매개변수 함수 ***<br>");
-        document.write(str);
-    }
-    func("함수가 실행되었습니다.<br><br>");
-}
-</code></pre>
-        </div>
-    </div>
+
 
     <hr>
-
-    <div id="sample4" class="sample">
-        <h2>04. 리턴값 함수 <span class="dot"></span></h2>
-        <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    function func(){
-        const str = "함수가 실행되었습니다.<br><br>";
-        return str;
+    <hr>
+    <hr>
+    <style>
+        table {border-collapse: collapse;}
+        table tr td{
+            border: 1px solid #989898;
+            padding: 5px;
     }
-
-    document.write("*** 04. 리턴값 함수 ***<br>");
-    document.write(func());
-}
-</code></pre>
-        </div>
-    </div>
+    </style>
 
     <hr>
-
+    <hr>
+    <hr>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
         //sample1
-        //01. 선언적 함수
+        //01. 변수 : 데이터 불러오기
         {
-            function func(){
-                document.write("*** 01. 선언적 함수 ***<br>");
-                document.write("함수가 실행되었습니다.<br><br>");
-            }
-            func();
-            func();
-        }
-        //sample2
-        //02. 익명 함수
-        {
-            const func = function(){
-                document.write("*** 02. 익명 함수 ***<br>");
-                document.write("함수가 실행되었습니다.<br><br>");
-            }
-            func();
-        }
-        //sample3
-        //03. 매개변수 함수
-        {
-            function func(str){
-                document.write("*** 03. 매개변수 함수 ***<br>");
-                document.write(str);
-            }
-            func("함수가 실행되었습니다.<br><br>");
-        }
-        //sample4
-        //04. 리턴값(결과값) 함수
-        {
-            function func(){
-                const str = "함수가 실행되었습니다.<br><br>";
-                return str;
-            }
-    
-            document.write("*** 04. 리턴값 함수 ***<br>");
-            document.write(func());
+            document.write("***01. 변수 : 데이터 불러오기***<br>");
+            
+            //let x =100;
+            //let x =200;
+            //let x =javascript;
+
+            let x = 100, y = 200; z = "javascript";
+
+            document.write(x,"<br>");
+            document.write(y,"<br>");
+            document.write(z,"<br><br>");
         }
         
     </script>
-    
 </body>
 </html>
