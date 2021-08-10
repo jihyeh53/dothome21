@@ -223,7 +223,9 @@
         <li><a href="javascript604.html">날짜 메서드</a></li>
         <li><a href="javascript605.html">이벤트 메서드</a></li>
     </ol>
-
+    <ol class="ol7">
+        <li><a href="javascript606.html">샘플</a></li>
+    </ol>
 
     <h2 class="mt20">이벤트 메서드</h2>
     <ul>
@@ -244,7 +246,7 @@
 
     let x = 100, y = 200; z = "javascript";
 
-    document.write(x);
+ 
     document.write(y);
     document.write(z);
 }
@@ -277,17 +279,18 @@
         //sample1
         //01. 변수 : 데이터 불러오기
         {
-            document.write("***01. 변수 : 데이터 불러오기***<br>");
-            
-            //let x =100;
-            //let x =200;
-            //let x =javascript;
+           var x = 100;
+           document.write(x);
 
-            let x = 100, y = 200; z = "javascript";
-
-            document.write(x,"<br>");
-            document.write(y,"<br>");
-            document.write(z,"<br><br>");
+           x=200;
+           document.write(x);
+        }
+        {
+            for(let i=1; i<10; i++){
+                if(true){
+                    document.write(i);
+                }
+            }
         }
         
     </script>

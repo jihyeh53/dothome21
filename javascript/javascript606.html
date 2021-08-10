@@ -227,10 +227,19 @@
         <li><a href="javascript606.html">샘플</a></li>
     </ol>
 
-    <h2 class="mt20">날짜 메서드</h2>
+    <h2 class="mt20">샘플</h2>
     <ul>
-        <li><a href="#sample1">01. 변수 : 데이터 불러오기</li>
+        <li><a href="javascriptsample602-1.html">01. CSS 속성 첫 글자만 검색하기</li>
+        <li><a href="javascriptsample602-2.html">02. CSS 속성 검색하면 설명 보여주기</li>
+        <li><a href="javascriptsample602-3.html">03. CSS 속성 정렬하기</li>
     </ul>
+    <h2 class="mt20">샘플</h2>
+    <ul>
+        <li><a href="#sample1">01. HTML 속성 첫 글자만 검색하기</li>
+        <li><a href="#sample2">02. HTML 속성 검색하면 설명 보여주기</li>
+        <li><a href="#sample3">03. HTML 속성 정렬하기</li>
+    </ul>
+
 
     <hr>
     
@@ -246,7 +255,7 @@
 
     let x = 100, y = 200; z = "javascript";
 
-    document.write(x);
+ 
     document.write(y);
     document.write(z);
 }
@@ -279,17 +288,18 @@
         //sample1
         //01. 변수 : 데이터 불러오기
         {
-            document.write("***01. 변수 : 데이터 불러오기***<br>");
-            
-            //let x =100;
-            //let x =200;
-            //let x =javascript;
+           var x = 100;
+           document.write(x);
 
-            let x = 100, y = 200; z = "javascript";
-
-            document.write(x,"<br>");
-            document.write(y,"<br>");
-            document.write(z,"<br><br>");
+           x=200;
+           document.write(x);
+        }
+        {
+            for(let i=1; i<10; i++){
+                if(true){
+                    document.write(i);
+                }
+            }
         }
         
     </script>
