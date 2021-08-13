@@ -51,13 +51,14 @@
     position: absolute;
     left: 2%;
     top: 0;
-    
+ 
 }
 .header-three .li{
     text-align:center;
 }
 .header-three .menu li a{
     padding: 0 16px;
+   
 }
 .header-three .member{
     position: absolute;
