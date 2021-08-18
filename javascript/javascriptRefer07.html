@@ -756,128 +756,128 @@
 
     <hr>
     
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
-        <script>
-            //sample01
-            {
-                const date = new Date();
-                const year = date.getFullYear();
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+        //sample01
+        {
+            const date = new Date();
+            const year = date.getFullYear();
+
+            document.querySelector(".sample01_N1").innerHTML = "1";
+            document.querySelector(".sample01_Q1").innerHTML = "new Date()";
+            document.querySelector(".sample01_M1").innerHTML = "getFullYear()";
+            document.querySelector(".sample01_R1").innerHTML = "지금은" + year + "년 입니다.";
     
-                document.querySelector(".sample01_N1").innerHTML = "1";
-                document.querySelector(".sample01_Q1").innerHTML = "new Date()";
-                document.querySelector(".sample01_M1").innerHTML = "getFullYear()";
-                document.querySelector(".sample01_R1").innerHTML = "지금은" + year + "년 입니다.";
+            const month = date.getMonth()+1;
+
+            document.querySelector(".sample01_N2").innerHTML = "2";
+            document.querySelector(".sample01_Q2").innerHTML = "new Date()";
+            document.querySelector(".sample01_M2").innerHTML = "getMonth()";
+            document.querySelector(".sample01_R2").innerHTML = "지금은" + month + "월 입니다.";
+    
+            const days = date.getDate();
+
+            document.querySelector(".sample01_N3").innerHTML = "3";
+            document.querySelector(".sample01_Q3").innerHTML = "new Date()";
+            document.querySelector(".sample01_M3").innerHTML = "getDate()";
+            document.querySelector(".sample01_R3").innerHTML = "지금은" + days + "일 입니다.";
+
+            const hour = date.getHours();
+
+            document.querySelector(".sample01_N4").innerHTML = "4";
+            document.querySelector(".sample01_Q4").innerHTML = "new Date()";
+            document.querySelector(".sample01_M4").innerHTML = "getHours()";
+            document.querySelector(".sample01_R4").innerHTML = "지금은" + hour + "시 입니다.";
+
+            const mintute = date.getMinutes();
+
+            document.querySelector(".sample01_N5").innerHTML = "5";
+            document.querySelector(".sample01_Q5").innerHTML = "new Date()";
+            document.querySelector(".sample01_M5").innerHTML = "getMinutes()";
+            document.querySelector(".sample01_R5").innerHTML = "지금은" + mintute + "시 입니다.";
+
+            const second = date.getSeconds();
+
+            document.querySelector(".sample01_N6").innerHTML = "6";
+            document.querySelector(".sample01_Q6").innerHTML = "new Date()";
+            document.querySelector(".sample01_M6").innerHTML = "getSeconds()";
+            document.querySelector(".sample01_R6").innerHTML = "지금은" + second + "초 입니다.";
+
+            const millisecond = date.getMilliseconds();
+
+            document.querySelector(".sample01_N7").innerHTML = "7";
+            document.querySelector(".sample01_Q7").innerHTML = "new Date()";
+            document.querySelector(".sample01_M7").innerHTML = "getMilliseconds()";
+            document.querySelector(".sample01_R7").innerHTML = "지금은" + millisecond + "미리초 입니다.";
         
-                const month = date.getMonth()+1;
-    
-                document.querySelector(".sample01_N2").innerHTML = "2";
-                document.querySelector(".sample01_Q2").innerHTML = "new Date()";
-                document.querySelector(".sample01_M2").innerHTML = "getMonth()";
-                document.querySelector(".sample01_R2").innerHTML = "지금은" + month + "월 입니다.";
-        
-                const days = date.getDate();
-    
-                document.querySelector(".sample01_N3").innerHTML = "3";
-                document.querySelector(".sample01_Q3").innerHTML = "new Date()";
-                document.querySelector(".sample01_M3").innerHTML = "getDate()";
-                document.querySelector(".sample01_R3").innerHTML = "지금은" + days + "일 입니다.";
-    
-                const hour = date.getHours();
-    
-                document.querySelector(".sample01_N4").innerHTML = "4";
-                document.querySelector(".sample01_Q4").innerHTML = "new Date()";
-                document.querySelector(".sample01_M4").innerHTML = "getHours()";
-                document.querySelector(".sample01_R4").innerHTML = "지금은" + hour + "시 입니다.";
-    
-                const mintute = date.getMinutes();
-    
-                document.querySelector(".sample01_N5").innerHTML = "5";
-                document.querySelector(".sample01_Q5").innerHTML = "new Date()";
-                document.querySelector(".sample01_M5").innerHTML = "getMinutes()";
-                document.querySelector(".sample01_R5").innerHTML = "지금은" + mintute + "시 입니다.";
-    
-                const second = date.getSeconds();
-    
-                document.querySelector(".sample01_N6").innerHTML = "6";
-                document.querySelector(".sample01_Q6").innerHTML = "new Date()";
-                document.querySelector(".sample01_M6").innerHTML = "getSeconds()";
-                document.querySelector(".sample01_R6").innerHTML = "지금은" + second + "초 입니다.";
-    
-                const millisecond = date.getMilliseconds();
-    
-                document.querySelector(".sample01_N7").innerHTML = "7";
-                document.querySelector(".sample01_Q7").innerHTML = "new Date()";
-                document.querySelector(".sample01_M7").innerHTML = "getMilliseconds()";
-                document.querySelector(".sample01_R7").innerHTML = "지금은" + millisecond + "미리초 입니다.";
-            
-                const day = date.getDay();
-                const dayList = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
-    
-                // 0  ->일 : dayList[0]
-                // 1 ->월 : dayList[1]
-                // 2 ->화 : dayList[2]
-                // 3 ->수 : dayList[3]
-                // 4 ->목 : dayList[4]
-                // 5 ->금 : dayList[5]
-                // 6 ->토 : dayList[6]
-    
-                 //0 1 2 3 4 5 6 : date. getDay()
-    
-                document.querySelector(".sample01_N8").innerHTML = "8";
-                document.querySelector(".sample01_Q8").innerHTML = "new Date()";
-                document.querySelector(".sample01_M8").innerHTML = "getDay()";
-                document.querySelector(".sample01_R8").innerHTML = "지금은" + dayList[day] + " 입니다.";
-    
-            }
-             //sample02
-             {
-                const date = new Date();
-                const locale = date.toLocaleString();
-                const localeDate = date.toLocaleDateString();
-                const localeTime = date.toLocaleTimeString();
-    
-                document.querySelector(".sample02_N1").innerHTML = "1";
-                document.querySelector(".sample02_Q1").innerHTML = "new Date()";
-                document.querySelector(".sample02_M1").innerHTML = "toLocaleString()";
-                document.querySelector(".sample02_R1").innerHTML = locale;
-    
-                document.querySelector(".sample02_N2").innerHTML = "2";
-                document.querySelector(".sample02_Q2").innerHTML = "new Date()";
-                document.querySelector(".sample02_M2").innerHTML = "toLocaleDateString()";
-                document.querySelector(".sample02_R2").innerHTML = localeDate;
-    
-                document.querySelector(".sample02_N3").innerHTML = "3";
-                document.querySelector(".sample02_Q3").innerHTML = "new Date()";
-                document.querySelector(".sample02_M3").innerHTML = "toLocaleTimeString()";
-                document.querySelector(".sample02_R3").innerHTML = localeTime;
-    
-                
-             }
-            //sample03
-            //타임스탬프는 1970년 1월 1일 00:00:00부터 현재까지의 경과 시간을 밀리초(1/1000)로 표현한 것입니다.
+            const day = date.getDay();
+            const dayList = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+
+            // 0  ->일 : dayList[0]
+            // 1 ->월 : dayList[1]
+            // 2 ->화 : dayList[2]
+            // 3 ->수 : dayList[3]
+            // 4 ->목 : dayList[4]
+            // 5 ->금 : dayList[5]
+            // 6 ->토 : dayList[6]
+
+                //0 1 2 3 4 5 6 : date. getDay()
+
+            document.querySelector(".sample01_N8").innerHTML = "8";
+            document.querySelector(".sample01_Q8").innerHTML = "new Date()";
+            document.querySelector(".sample01_M8").innerHTML = "getDay()";
+            document.querySelector(".sample01_R8").innerHTML = "지금은" + dayList[day] + " 입니다.";
+
+        }
+            //sample02
             {
-                const date = Date.parse("2021/8/11");
-    
-                document.querySelector(".sample03_N1").innerHTML = "1";
-                document.querySelector(".sample03_Q1").innerHTML = "2021/8/11";
-                document.querySelector(".sample03_M1").innerHTML = "Date.parse()";
-                document.querySelector(".sample03_R1").innerHTML = date;
-    
-                const date2 = Date.parse("11 8 2021");
-    
-                document.querySelector(".sample03_N2").innerHTML = "2";
-                document.querySelector(".sample03_Q2").innerHTML = "11 8 2021";
-                document.querySelector(".sample03_M2").innerHTML = "Date.parse()";
-                document.querySelector(".sample03_R2").innerHTML = date2;
-    
-                const date3 = Date.now();
-    
-                document.querySelector(".sample03_N3").innerHTML = "3";
-                document.querySelector(".sample03_Q3").innerHTML = "";
-                document.querySelector(".sample03_M3").innerHTML = "Date.now()";
-                document.querySelector(".sample03_R3").innerHTML = date3;
+            const date = new Date();
+            const locale = date.toLocaleString();
+            const localeDate = date.toLocaleDateString();
+            const localeTime = date.toLocaleTimeString();
+
+            document.querySelector(".sample02_N1").innerHTML = "1";
+            document.querySelector(".sample02_Q1").innerHTML = "new Date()";
+            document.querySelector(".sample02_M1").innerHTML = "toLocaleString()";
+            document.querySelector(".sample02_R1").innerHTML = locale;
+
+            document.querySelector(".sample02_N2").innerHTML = "2";
+            document.querySelector(".sample02_Q2").innerHTML = "new Date()";
+            document.querySelector(".sample02_M2").innerHTML = "toLocaleDateString()";
+            document.querySelector(".sample02_R2").innerHTML = localeDate;
+
+            document.querySelector(".sample02_N3").innerHTML = "3";
+            document.querySelector(".sample02_Q3").innerHTML = "new Date()";
+            document.querySelector(".sample02_M3").innerHTML = "toLocaleTimeString()";
+            document.querySelector(".sample02_R3").innerHTML = localeTime;
+
             
             }
-        </script>
-    </body>
-    </html>
+        //sample03
+        //타임스탬프는 1970년 1월 1일 00:00:00부터 현재까지의 경과 시간을 밀리초(1/1000)로 표현한 것입니다.
+        {
+            const date = Date.parse("2021/8/11");
+
+            document.querySelector(".sample03_N1").innerHTML = "1";
+            document.querySelector(".sample03_Q1").innerHTML = "2021/8/11";
+            document.querySelector(".sample03_M1").innerHTML = "Date.parse()";
+            document.querySelector(".sample03_R1").innerHTML = date;
+
+            const date2 = Date.parse("11 8 2021");
+
+            document.querySelector(".sample03_N2").innerHTML = "2";
+            document.querySelector(".sample03_Q2").innerHTML = "11 8 2021";
+            document.querySelector(".sample03_M2").innerHTML = "Date.parse()";
+            document.querySelector(".sample03_R2").innerHTML = date2;
+
+            const date3 = Date.now();
+
+            document.querySelector(".sample03_N3").innerHTML = "3";
+            document.querySelector(".sample03_Q3").innerHTML = "";
+            document.querySelector(".sample03_M3").innerHTML = "Date.now()";
+            document.querySelector(".sample03_R3").innerHTML = date3;
+        
+        }
+    </script>
+</body>
+</html>

@@ -34,6 +34,19 @@
             margin-bottom: 400px;
             line-height: 1.6;
         }
+        .title {
+            border-top: 3px solid #0e43f1;
+            border-bottom: 1px solid #0e43f1;
+            margin-bottom: 20px;
+        }
+        .title h1 a {
+            font-family: 'TmonMonsori';
+            color: #0e43f1;
+            font-size: 50px;
+            display: inline-block;
+            padding: 15px 0 12px;
+            text-transform: uppercase;
+        }
         h1 {
             padding: 20px 0;
         }
@@ -180,19 +193,24 @@
         }
         .menu li a {
             font-family: 'NEXON Lv1 Gothic OTF';
-            color: #000;
-            border: 1px dashed #000;
+            color: #0e43f1;
+            border: 1px dashed #0e43f1;
             padding: 10px 30px;
             display: inline-block;
             border-radius: 50px;
             font-size: 16px;
             margin: 4px 1px;
+            box-shadow: inset 0 0 0 #0e43f1;
             transition: all 0.4s;
         }
         .menu li a:hover {
-            box-shadow: inset 0 -100px 0 #000;
+            box-shadow: inset 0 -100px 0 #0e43f1;
             color: #fff;
             border-style: solid;
+        }
+        .menu li.active a {
+            background: #0e43f1;
+            color: #fff;
         }
         @media (max-width: 800px){
             .menu li a {
@@ -219,7 +237,10 @@
     </style>
 </head>
 <body>
-    <h1><a href="index.html">Javascript 레퍼런스</a></h1>
+    <main id="contents">
+        <div class="title">
+            <h1><a href="index.html">데이터 저장하기</a></h1>
+        </div>
     <ul class="page">
         <li><a href="../refer-html/index.html">HTML</a></li>
         <li><a href="../refer-css/index.html">CSS</a></li>
@@ -246,7 +267,6 @@
             <li><a href="javascriptRefer13.html">알고리즘</a></li>
         </ul>
     </nav>
-    <h2 class="mt20">데이터 저장하기</h2>
     <ul class="list">
         <li><a href="#sample01">01. 변수 : 데이터 저장</a></li>
         <li><a href="#sample02">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
@@ -268,6 +288,7 @@
         <li><a href="#sample18">18. 변수의 변환 : 형 변환</a></li>
         <li><a href="#sample18">19. 변수의 유형 : 데이터 타입</a></li>
     </ul>
+    </main>
     <hr>
 
     <div id="sample1" class="sample">
