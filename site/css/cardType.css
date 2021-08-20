@@ -100,14 +100,12 @@
 
 .cardType02 .card-wrap .card .card-keyword span {
     font-size: 10px;
-    margin: 6px 202px 0 1px;
-    padding: 4px 16px 3px;
-    border-radius: 20px;
-    border: solid 1px #000;
-    background-color: #000;
+    line-height: 1.4;
     color: #fff;
-    font-weight: 300;
-    text-align: center;
+    background-color: #000;
+    border-radius: 20px;
+    padding: 4px 16px 3px;
+    margin: 6px 0px 0 0;
     text-transform: uppercase;
     display: inline-block;
 }
