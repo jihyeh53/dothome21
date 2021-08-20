@@ -28,13 +28,16 @@
             padding: 0;
             font-family: 'NEXON Lv1 Gothic OTF';
             line-height: 1.6;
+            word-break: break-all;
         }
         body {
             padding: 5%;
             margin-bottom: 400px;
+            line-height: 1.6;
         }
         h1 {
-            padding: 20px 0;
+            padding-top: 40px;
+            padding-bottom: 20px;
         }
         h1 a {
             font-family: 'TmonMonsori';
@@ -53,6 +56,9 @@
         }
         ul {
             list-style: none;
+        }
+        ol{
+            padding-left: 26px;
         }
         a {
             text-decoration: none;
@@ -158,6 +164,41 @@
         .mt20 {
             margin-top: 20px;
         }
+        .sam{
+            background-color: #000;
+            color: #fff;
+            border-radius: 30px;
+            padding: 0 20px;
+        }
+        .view{
+            padding: 20px;
+        }
+        .view table{
+            width: 100%;
+            /* border-width: 1px;
+            border-style: solid;
+            border-color: #e6e6e6; */
+            border: 1px solid #e6e6e6; /*속기형 작성법*/
+            text-align: center;
+            vertical-align: middle;
+            border-collapse: collapse;
+        }
+        .view table th{
+            padding: 13px 5px 11px 5px;
+        }
+        .view table td{
+            border: 1px solid #e6e6e6;
+            padding: 13px 5px 11px 5px;
+        }
+        .view table td.result{
+            color: #fff;
+            transition: all 0.3s;
+            cursor: zoom-in;
+        }
+        .view table td.result:hover{
+            color: #000;
+            background-color: #f5f5f5;
+        }
         .page {
             position: absolute;
             right: 20px;
@@ -194,6 +235,34 @@
             border-style: solid;
         }
         @media (max-width: 800px){
+            body{
+                padding: 5%;
+                font-size: 13px;
+            }
+            h1{
+                text-align: center;
+            }
+            .sample h2{
+                font-size: 14px;
+                font-weight: normal;
+                padding: 7px 5px 5px;
+            }
+            .sample h2 .dot{
+                display: none;
+            }
+            .view{
+                padding: 5px;
+                max-width: 800px;
+                overflow: auto;
+            }
+            .view th,
+            .view table td{
+                white-space: nowrap;
+                font-weight: normal;
+            }
+            .view table td.result {
+                color: #000;
+            }
             .menu li a {
                 font-size: 12px;
                 padding: 5px 20px;
@@ -892,7 +961,6 @@
             } 
             document.write("<br><br>");
         }
-
     </script>
 </body>
 

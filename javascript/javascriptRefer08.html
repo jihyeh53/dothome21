@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +7,9 @@
     <title>javascript</title>
     <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
     <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css"
+        integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @font-face {
             font-family: 'NEXON Lv1 Gothic OTF';
@@ -25,21 +28,23 @@
             padding: 0;
             font-family: 'NEXON Lv1 Gothic OTF';
             line-height: 1.6;
+            word-break: break-all;
         }
         body {
             padding: 5%;
             margin-bottom: 400px;
+            line-height: 1.6;
         }
         h1 {
-            padding-bottom: 20px 0;
+            padding: 20px 0;
         }
-        h1 a{
+        h1 a {
             font-family: 'TmonMonsori';
         }
         hr {
             margin: 5% 0;
             border-style: dashed;
-            border-color: #E6E6E6;
+            border-color: #e6e6e6;
             border-width: 0px;
             border-bottom-width: 1px;
         }
@@ -51,20 +56,23 @@
         ul {
             list-style: none;
         }
+        ol{
+            padding-left: 26px;
+        }
         a {
             text-decoration: none;
             color: #333;
         }
         .sample {
-            border: 1px solid #E6E6E6;
+            border: 1px solid #e6e6e6;
             border-radius: 5px;
         }
         .sample h2 {
             position: relative;
             font-size: 16px;
-            background-color: #F2F2F2;
+            background-color: #f2f2f2;
             padding: 15px;
-            border-bottom: 1px solid #E6E6E6;
+            border-bottom: 1px solid #e6e6e6;
             border-radius: 5px 5px 0 0;
         }
         .sample h2 .dot {
@@ -105,7 +113,7 @@
         }
         .sample .re {
             padding: 20px;
-            border-top: 1px solid #E6E6E6;
+            border-top: 1px solid #e6e6e6;
         }
         .sample .re a {
             color: #333;
@@ -122,7 +130,7 @@
         }
         .sample .problem {
             padding: 25px;
-            border-bottom: 1px solid #E6E6E6;
+            border-bottom: 1px solid #e6e6e6;
             line-height: 1.6;
         }
         .sample pre {
@@ -131,7 +139,7 @@
         }
         .sample .desc {
             padding: 25px;
-            border-bottom: 1px solid #E6E6E6;
+            border-bottom: 1px solid #e6e6e6;
         }
         .sample .desc dt {
             padding: 3px 0;
@@ -143,7 +151,7 @@
         }
         .sample .sam {
             padding: 25px;
-            border-bottom: 1px solid #E6E6E6;
+            border-bottom: 1px solid #e6e6e6;
         }
         .sample .sam dt {
             padding: 3px 0;
@@ -155,80 +163,114 @@
         .mt20 {
             margin-top: 20px;
         }
-        .ol1::before{
-            content:"데이터 저장하기 : ";
+        .view{
+            padding: 20px;
         }
-        .ol2::before{
-            content:"데이터 불러오기 : ";
+        .view table{
+            width: 100%;
+            border: 1px solid #e6e6e6; /*속기형 작성법*/
+            text-align: center;
+            vertical-align: middle;
+            border-collapse: collapse;
         }
-        .ol3::before{
-            content:"데이터 실행하기 : ";
+        .view table th{
+            padding: 13px 5px 11px 5px;
         }
-        .ol4::before{
-            content:"데이터 제어하기 : ";
+        .view table td{
+            border: 1px solid #e6e6e6;
+            padding: 13px 5px 11px 5px;
         }
-        .ol5::before{
-            content:"데이터 내장 객체 : ";
+        .view table td.result{
+            color: #fff;
+            transition: all 0.3s;
+            cursor: zoom-in;
         }
-        .ol6::before{
-            content:"데이터 공부하기 : ";
+        .view table td.result:hover{
+            color: #000;
+            background-color: #f5f5f5;
         }
-        .page{
-            text-align: right;
-            top: 10px;
-            margin-bottom: 3px;
+        .page {
             position: absolute;
             right: 20px;
-            left: 15px;
+            top: 15px;
         }
-        .page li{
+        .page li {
             display: inline;
             list-style: none;
         }
-        .page li a{
+        .page li a {
             text-decoration: none;
             color: #222;
         }
-        .page li a:hover{
-           color: #0f834b;
+        .page li a:hover {
+            color: #098a4c;
         }
-        .menu li{
+        .menu li {
             display: inline;
         }
-        .menu li a{
+        .menu li a {
             font-family: 'NEXON Lv1 Gothic OTF';
             color: #000;
-            border: 1px dashed#000;
+            border: 1px dashed #000;
             padding: 10px 30px;
             display: inline-block;
             border-radius: 50px;
             font-size: 16px;
             margin: 4px 1px;
+            transition: all 0.4s;
         }
-        .menu li a:hover{
+        .menu li a:hover {
             box-shadow: inset 0 -100px 0 #000;
             color: #fff;
             border-style: solid;
         }
-        @media(max-width:800px){
-            .menu li a{
-                font-size: 12px;
-                padding: 5px 20px;
+        @media (max-width: 800px){
+            body{
+                padding: 5%;
+                font-size: 13px;
             }
-            .list li{
-                line-height: 1.2;
-            }
-            .list a{
-                font-size: 12px;
+            h1{
+                text-align: center;
             }
             .sample h2{
-                padding: 12px 10px 10px;
                 font-size: 14px;
+                font-weight: normal;
+                padding: 7px 5px 5px;
             }
             .sample h2 .dot{
                 display: none;
             }
-            .sample pre{
+            .view{
+                padding: 5px;
+                max-width: 800px;
+                overflow: auto;
+            }
+            .view th,
+            .view table td{
+                white-space: nowrap;
+                font-weight: normal;
+            }
+            .view table td.result {
+                color: #000;
+            }
+            .menu li a {
+                font-size: 12px;
+                padding: 5px 20px;
+            }
+            .list li {
+                line-height: 1.2;
+            } 
+            .list a {
+                font-size: 12px;
+            }
+            .sample h2 {
+                padding: 12px 10px 10px;
+                font-size: 14px;
+            }
+            .sample h2 .dot {
+                display: none;
+            }
+            .sample pre {
                 font-size: 14px;
             }
         }
@@ -507,43 +549,42 @@
 
     <hr>
     
-    
-    
-        <hr>
-        <hr>
-        <hr>
-        <style>
-            table {border-collapse: collapse;}
-            table tr td{
-                border: 1px solid #989898;
-                padding: 5px;
+
+
+    <hr>
+    <hr>
+    <hr>
+    <style>
+        table {border-collapse: collapse;}
+        table tr td{
+            border: 1px solid #989898;
+            padding: 5px;
+    }
+    </style>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+        //sample1
+        //01. 변수 : 데이터 불러오기
+        {
+            var x = 100;
+            document.write(x);
+
+            x=200;
+            document.write(x);
         }
-        </style>
-    
-        <hr>
-        <hr>
-        <hr>
-    
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
-        <script>
-            //sample1
-            //01. 변수 : 데이터 불러오기
-            {
-               var x = 100;
-               document.write(x);
-    
-               x=200;
-               document.write(x);
-            }
-            {
-                for(let i=1; i<10; i++){
-                    if(true){
-                        document.write(i);
-                    }
+        {
+            for(let i=1; i<10; i++){
+                if(true){
+                    document.write(i);
                 }
             }
-            
-        </script>
-    </body>
-    </html>
+        }
+    </script>
+</body>
+</html>

@@ -32,6 +32,7 @@
         body {
             padding: 5%;
             margin-bottom: 400px;
+            line-height: 1.6;
         }
         h1 {
             padding: 20px 0;
@@ -53,6 +54,9 @@
         }
         ul {
             list-style: none;
+        }
+        ol{
+            padding-left: 26px;
         }
         a {
             text-decoration: none;
@@ -194,6 +198,13 @@
             border-style: solid;
         }
         @media (max-width: 800px){
+            body{
+                padding: 5%;
+                font-size: 13px;
+            }
+            h1{
+                text-align: center;
+            }
             .menu li a {
                 font-size: 12px;
                 padding: 5px 20px;
@@ -246,7 +257,7 @@
         </ul>
     </nav>
     <h2 class="mt20">데이터 저장하기</h2>
-    <ul class="list">
+    <ul>
         <li><a href="#sample01">01. 변수 : 데이터 저장</a></li>
         <li><a href="#sample02">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
         <li><a href="#sample03">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
@@ -263,13 +274,11 @@
         <li><a href="#sample14">14. 객체 : 데이터 저장(키와 값) : 표현 방법6 : 객체 속에 배열</a></li>
         <li><a href="#sample15">15. 객체 : 데이터 저장(키와 값) : 표현 방법7 : 객체 속에 변수</a></li>
         <li><a href="#sample16">16. 객체 : 데이터 저장(키와 값) : 표현 방법8 : 객체 속에 함수</a></li>
+        <li><a href="#sample17">17. 변수의 종류 : 전역변수, 지역변수</a></li>
+        <li><a href="#sample18">18. 변수의 변환 : 형 변환</a></li>
+        <li><a href="#sample18">19. 변수의 유형 : 데이터 타입</a></li>
     </ul>
-    <h2 class="mt20">추가</h2>
-    <ul class="list">
-        <li><a href="#sample17">01. 변수의 종류 : 전역변수, 지역변수</a></li>
-        <li><a href="#sample18">02. 변수의 변환 : 형 변환</a></li>
-        <li><a href="#sample18">03. 변수의 유형 : 데이터 타입</a></li>
-    </ul>
+    </main>
     <hr>
 
     <div id="sample1" class="sample">
@@ -592,7 +601,7 @@
     <hr>
 
     <div id="sample17" class="sample">
-        <h2>01. 변수의 종류 : 전역변수, 지역변수<span class="dot"></span></h2>
+        <h2>17. 변수의 종류 : 전역변수, 지역변수<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     let x = 100;       //변수 설정 : 전역 변수 
@@ -628,7 +637,7 @@
     <hr>
 
     <div id="sample18" class="sample">
-        <h2>02. 변수의 변환 : 형 변환<span class="dot"></span></h2>
+        <h2>18. 변수의 변환 : 형 변환<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     let x = 100;
@@ -656,7 +665,7 @@
     <hr>
 
     <div id="sample19" class="sample">
-        <h2>03. 변수의 유형 : 데이터 타입<span class="dot"></span></h2>
+        <h2>19. 변수의 유형 : 데이터 타입<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     let num = 100;
@@ -935,7 +944,7 @@
         //sample17
         // 17. 변수의 종류 : 전역변수, 지역변수
         {
-            document.write("*** 01. 변수의 종류 ***<br>");
+            document.write("*** 17. 변수의 종류 ***<br>");
 
             let x = 100;       //변수 설정 : 전역 변수 
             let y = 200;
@@ -967,7 +976,7 @@
         //sample18
         //18. 변수의 변환 : 형 변환
         {
-            document.write("*** 02. 변수의 변환 ***<br>");
+            document.write("*** 18. 변수의 변환 ***<br>");
 
             let x = 100;
             let y = "100";
@@ -993,7 +1002,7 @@
         //변수 : 숫자(number), 문자(string), 함수(function), 배열(object), 
         //       객체(object), 불린(boolaen), 특수값(null, undefinde), 심볼(symbol)
         {
-            document.write("*** 03. 변수의 유형 ***<br>");
+            document.write("*** 19. 변수의 유형 ***<br>");
 
             let num = 100;
             let str = "javascript"
@@ -1015,7 +1024,6 @@
             document.write(typeof(und), "<br>");
             document.write(typeof(sym), "<br>");
         }
-
     </script>
 </body>
 
