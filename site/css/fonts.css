@@ -114,3 +114,48 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
     font-style: normal;
 }
+
+/* 나눔스퀘어 */
+@font-face {
+    font-family: NanumSquare;
+    src: local(NanumSquare-Regular),
+      url(/path/to/NanumSquare-Regular.woff2) format("woff2"),
+      url(/path/to/NanumSquare-Regular.woff) format("woff"),
+      url(/path/to/NanumSquare-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: NanumSquare;
+    src: local(NanumSquare-Bold),
+      url(/path/to/NanumSquare-Bold.woff2) format("woff2"),
+      url(/path/to/NanumSquare-Bold.woff) format("woff"),
+      url(/path/to/NanumSquare-Bold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+  }
+  @font-face {
+    font-family: NanumSquare;
+    src: local(NanumSquare-ExtraBold),
+      url(/path/to/NanumSquare-ExtraBold.woff2) format("woff2"),
+      url(/path/to/NanumSquare-ExtraBold.woff) format("woff"),
+      url(/path/to/NanumSquare-ExtraBold.ttf) format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+  }
+  /* 카페24 당당해 */
+  @font-face {
+    font-family: 'Cafe24Dangdanghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  /* 카페24 단정해 */
+  @font-face {
+    font-family: 'Cafe24Danjunghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
