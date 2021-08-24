@@ -55,10 +55,14 @@
 }
 .header-three .li{
     text-align:center;
+  
 }
 .header-three .menu li a{
     padding: 0 16px;
-   
+    float:left; 
+    list-style:none; 
+    margin:25px;
+    text-align:center;
 }
 .header-three .member{
     position: absolute;
