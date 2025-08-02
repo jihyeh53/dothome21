@@ -2,590 +2,418 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Reference</title>
-    <style>
-        @font-face {
-            font-family: 'NEXON Lv1 Gothic OTF';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'TmonMonsori';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* width: margin + padding */
-        }
-        ul{
-            list-style: none;
-        }
-        a{
-            text-decoration: none;
-        }
-        #wrap{
-            margin: 2vh;
-            border: 8px solid#0e43f1;
-            border-radius: 20px;
-            height: 96vh;
-          
-        }
-        #contents{
-            border: 8px solid#50b5f9;
-            border-radius: 12px;
-            text-align: center;
-            padding: 5% 2%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        #contents h1 {
-            font-family: 'TmonMonsori';
-            color: #0e43f1;
-            font-size: 8vw;
-            text-transform: uppercase;
-        }
-        #contents p a{
-            font-family: 'NEXON Lv1 Gothic OTF';
-            background: #0e43f1;
-            color: #fff;
-            display: inline-block;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 16px;
-            margin-bottom: 2%;
-            border-color: 1px solid #fff;
-        }
-        #contents p a:hover{
-            border-color: 1px solid #0e43f1;
-            background:#fff;
-            color: #0e43f1;
-        }
-        .menu li{
-            display: inline;
-        }
-        .menu li a{
-            font-family: 'NEXON Lv1 Gothic OTF';
-            color: #0e43f1;
-            border: 1px dashed#0e43f1;
-            padding: 10px 30px;
-            display: inline-block;
-            border-radius: 50px;
-            font-size: 16px;
-            margin: 4px 1px;
-        }
-        .menu li a:hover{
-            box-shadow: inset 0 -100px 0 #0e43f1;
-            color: #fff;
-            border-style: solid;
-        }
-        @media(max-width: 800px){
-            #wrap{
-                height: auto;
-                margin: 0;
-                border-width: 6px;
-                border-radius: 18px;
-            }
-            #contents{
-                border-width: 6px;
-                padding: 15% 2%;
-            }
-            #contents p,
-            .menu li a{
-                font-size: 12px;
-                padding: 5px 20px;
-            }
-        }
-
-        /* dog */
-        .wrap {
-            width: 300px;
-            height: 300px;
-            background: #0066ff;
-            position: relative;
-            box-shadow: 0 -10px 0 0 #0057d9;
-            border-radius: 50%;
-        }
-        .body {
-            width: 150px;
-            height: 60px;
-            background: #fff;
-            position: absolute;
-            bottom: 0;
-            left: calc(50% - 75px);
-            border-radius: 40px 40px 0 0;
-            z-index: 4;
-            -webkit-animation: squiggly-anim 0.4s infinite;
-            animation: squiggly-anim 0.4s infinite;
-        }
-        @keyframes squiggly-anim {
-            0% {
-            filter: url("#squiggly-0");
-            }
-            25% {
-            filter: url("#squiggly-1");
-            }
-            50% {
-            -webkit-filter: url("#squiggly-2");
-            }
-            75% {
-            filter: url("#squiggly-3");
-            }
-            100% {
-            filter: url("#squiggly-4");
-            }
-        }
-        .body .leg {
-            width: 45px;
-            height: 60px;
-            position: absolute;
-            background: #fff;
-            transform-style: preserve-3d;
-            z-index: 2;
-            left: -15px;
-            transform: translateZ(3px);
-            border-radius: 60px 30px 30px 30px;
-            transform-origin: 130% 0%;
-            top: 0px;
-        }
-        .body .leg.r {
-            left: auto;
-            right: -15px;
-            border-radius: 30px 60px 30px 30px;
-            transform-origin: -30% 0%;
-        }
-        .body .leg.r .paw {
-            transform-origin: 100% 0%;
-        }
-        .body .leg .paw {
-            width: 45px;
-            height: 40px;
-            position: absolute;
-            background: #e6e6e6;
-            border-radius: 15px;
-            bottom: 0px;
-            overflow: hidden;
-            left: -2.5px;
-            transform-origin: 0% 0%;
-        }
-        .body .leg .paw:before {
-            content: "";
-            position: absolute;
-            width: 3px;
-            height: 15px;
-            background: #010101;
-            bottom: 0;
-            left: 12.5px;
-            border-radius: 50px 50px 0 0;
-            box-shadow: 15px 0 0 #010101;
-        }
-        .body .spots {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 40px 40px 0 0;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            transform: translateZ(2px);
-        }
-        .body .spots:before, body .body .spots:after {
-            content: "";
-            position: absolute;
-            width: 20%;
-            height: 100%;
-            top: 20px;
-            background: #252510;
-            border-radius: 0 20% 100% 0;
-            transform: translateZ(2px);
-        }
-        .body .spots:after {
-            right: 0;
-            border-radius: 20% 0 0 100%;
-        }
-        .body .head {
-            position: absolute;
-            width: 150px;
-            height: 130px;
-            top: -120px;
-            z-index: 3;
-            border-radius: 1600px 1600px 1500px 1500px/2400px 2400px 1200px 1200px;
-            transform-style: preserve-3d;
-            transform: translateZ(1px);
-        }
-        .body .head .inner {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 1600px 1600px 1500px 1500px/2400px 2400px 1200px 1200px;
-            transform: translateZ(-2px);
-            overflow: hidden;
-        }
-        .body .head .inner .spot {
-            position: absolute;
-            background: #252510;
-            width: 100px;
-            height: 110px;
-            border-radius: 100%;
-            left: -25px;
-            top: -25px;
-            box-shadow: 0 0 0 150px #fff;
-        }
-        .body .head .ear {
-            position: absolute;
-            width: 65px;
-            height: 100px;
-            background: #131308;
-            box-shadow: inset -5px 0 0 15px #252510;
-            top: -50px;
-            z-index: -5;
-            left: -10px;
-            transform-style: preserve-3d;
-            transform: translateZ(-2px);
-            transform-origin: 100% 100%;
-            border-radius: 100px 300px 50px 150px/100px 600px 50px 350px;
-        }
-        .body .head .ear:before {
-            content: "";
-            position: absolute;
-            width: 50px;
-            height: 55px;
-            background: #252510;
-            z-index: -1;
-            transform: translateZ(-3px) rotate(-20deg);
-            border-radius: 0 0 100% 100%;
-            bottom: -35px;
-            left: 20px;
-        }
-        .body .head .ear.right {
-            left: auto;
-            right: -10px;
-            border-radius: 300px 100px 150px 50px/600px 100px 350px 50px;
-            background: #cccccc;
-            box-shadow: inset 5px 0 0 15px #fff;
-            transform-origin: 0% 100%;
-        }
-        .body .head .ear.right:before {
-            content: "";
-            position: absolute;
-            width: 50px;
-            height: 55px;
-            background: #fff;
-            z-index: -1;
-            transform: translateZ(-3px) rotate(20deg);
-            border-radius: 0 0 100% 100%;
-            bottom: -35px;
-            left: auto;
-            right: 20px;
-        }
-        .body .head .eyes {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: black;
-            border-radius: 100%;
-            top: 35px;
-            left: 30px;
-            overflow: hidden;
-            transform: translateZ(2px);
-        }
-        .body .head .eyes:before,
-        .body .head .eyes:after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 50%;
-            background: #252510;
-            top: 0;
-            left: 0;
-            transform: translateY(-120%);
-            -webkit-animation: blink 5s ease-in-out infinite;
-            animation: blink 5s ease-in-out infinite;
-        }
-        @keyframes blink {
-            90% {
-            transform: translateY(-120%);
-            }
-            92% {
-            transform: translateY(0);
-            }
-            94% {
-            transform: translateY(-120%);
-            }
-            96% {
-            transform: translateY(0);
-            }
-            98% {
-            transform: translateY(-120%);
-            }
-        }
-       .body .head .eyes:after {
-            top: auto;
-            bottom: 0;
-            transform: translateY(120%);
-            -webkit-animation: blink2 5s ease-in-out infinite;
-            animation: blink2 5s ease-in-out infinite;
-        }
-        @keyframes blink2 {
-            90% {
-            transform: translateY(120%);
-            }
-            92% {
-            transform: translateY(0);
-            }
-            94% {
-            transform: translateY(120%);
-            }
-            96% {
-            transform: translateY(0);
-            }
-            98% {
-            transform: translateY(120%);
-            }
-        }
-        .body .head .eyes:nth-of-type(2) {
-            left: auto;
-            right: 30px;
-        }
-        .body .head .eyes:nth-of-type(2):before, 
-        .body .head .eyes:nth-of-type(2):after {
-            background: #fff;
-        }
-        .body .head .snout {
-            position: absolute;
-            width: 80px;
-            height: 70px;
-            background: #fff;
-            border-radius: 45%;
-            left: calc(50% - 40px);
-            bottom: 20px;
-            transform: translateZ(2px);
-        }
-        .body .head .snout .nose {
-            width: 30px;
-            height: 25px;
-            position: absolute;
-            background: black;
-            left: calc(50% - 15px);
-            bottom: 30px;
-            border-radius: 10px;
-        }
-        .body .head .snout .nose:before {
-            content: "";
-            position: absolute;
-            width: 2px;
-            height: 10px;
-            background: black;
-            bottom: -8px;
-            left: calc(50% + 1px);
-        }
-        .body .head .snout .nose:after {
-            content: "";
-            position: absolute;
-            width: 70%;
-            height: 20px;
-            border: 2px solid;
-            border-color: black transparent transparent transparent;
-            bottom: -30px;
-            left: 15%;
-            border-radius: 50%;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="JIHYE">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="지혜, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, publisher, css3, html, markup, design">
+    <title>지혜 | JIHYE | mysql</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../assets/css/prism.css" rel="stylesheet">
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/favicon_114.png">
+    <link rel="icon" href="../assets/ico/icon.png">
+    <link rel="icon" href="../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="128x128">
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="JIHYE" />
+    <meta property="og:url" content="https://jihyeh53.github.io/dothome21/index.html" />
+    <meta property="og:image" content="http://jihyeh53.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="JIHYE" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="지혜" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://jihyeh53.dothome.co.kr/assets/ico/icon.png" />
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <div id="wrap">
-        <main id="contents">
-            <div class="dog">
-                <div class='wrap'>
-                    <div class='body'>
-                        <div class='leg l'>
-                            <div class='paw'></div>
-                        </div>
-                        <div class='leg r'>
-                            <div class='paw'></div>
-                        </div>
-                        <div class='spots'></div>
-                        <div class='head'>
-                            <div class='snout'>
-                                <div class='nose'></div>
-                            </div>
-                            <div class='eyes'></div>
-                            <div class='ear'></div>
-                            <div class='ear right'></div>
-                            <div class='inner'>
-                                <div class='spot'></div>
-                            </div>
-                            <div class='eyes'></div>
-                            <div class='ear'></div>
-                            <div class='ear right'></div>
-                            <div class='inner'>
-                                <div class='spot'></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
-                    <defs>
-                        <filter id="squiggly-0">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
-                            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
-                        </filter>
-                        <filter id="squiggly-1">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
-                        </filter>
-                        <filter id="squiggly-2">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-                        </filter>
-                        <filter id="squiggly-3">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
-                        </filter>
-                        <filter id="squiggly-4">
-                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
-                        </filter>
-                    </defs>
-                </svg>
+    <a class="sr-only" href="#content">Skip to main content</a>
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">JIHYE &lt;/doc&gt;</a>
             </div>
-            <h1>제이쿼리</h1>
-            <p>
-                <a href="../refer-javascript/index.html">자바스크립트 레퍼런스 북</a>
-                <a href="../refer-jquery/index.html">제이쿼리 레퍼런스 북</a>
-
-            </p>
-            <nav class="menu">
-                <ul>
-                    <li><a href="jqueryRefer01.html">선택자</a></li>
-                    <li><a href="jqueryRefer02.html">선택자 메서드</a></li>
-                </ul>
-                <ul>
-                    <li><a href="jqueryRefer03.html">속성 메서드</a></li>
-                    <li><a href="jqueryRefer04.html">조작 메서드</a></li>
-                    <li><a href="jqueryRefer05.html">데이터 메서드</a></li>
-                    <li><a href="jqueryRefer06.html">애니메이션 메서드</a></li>
-                    <li><a href="jqueryRefer07.html">이벤트 메서드</a></li>
-                </ul>
-                <ul>
-                    <li><a href="jqueryRefer08.html">샘플</a></li>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://rlozib.tistory.com/">Tistory</a></li>
+                    <li><a href="https://codepen.io/webstoryboy">Codepen</a></li>
+                    <li><a href="https://jihyeh53.github.io/dothome21/index.html">Github</a></li>
+                    <li><a href="https://www.figma.com/@874463">Figma</a></li>
                 </ul>
             </nav>
-        </main>
+        </div>
+    </header>
+    <div class="bs-header bgs1" id="content">
+        <div class="container">
+            <h1>MySQL Reference v1.0 &lt;/doc&gt;</h1>
+            <p><a href="https://jihyeh53.github.io/dothome21/index.html" target="_blank">jihyeh53.github.io</a></p>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-    <script>
-          var $eyes = $('.eyes'),
-            $snout = $('.snout'),
-            $spot = $('.spot'),
-            $nose = $('.nose'),
-            $ear = $('.ear'),
-            $rightear = $('.right'),
-            $leftleg = $('.l'),
-            $rightleg = $('.r'),
-            $leftpaw = $('.l .paw'),
-            $rightpaw = $('.r .paw'),
-            $container = $('.wrap'),
-            $outer = $('body'),
-            container_w = $container.width(),
-            container_h = $container.height();
-        $('body').on('mousemove.parallax', function(event) {
-            var pos_x = event.pageX,
-                pos_y = event.pageY,
-                left = 0,
-                bottom = 0,
-                top = 0;
-                left = container_w / 0.5 - pos_x;
-                top = container_h / 2 - pos_y;
-                bottom = container_h / 0.25 - (pos_y * 2.5);
-            TweenMax.to(
-                $snout, 1, {
-                    css: { transform: 'translateX(' + left / -32 + 'px) translateY(' + top / -26 + 'px) translateZ(1px)'
-                },
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-            TweenMax.to(
-                $spot, 1, {
-                css: {
-                    transform: 'translateX(' + left / -32 + 'px) translateY(' + top / -56 + 'px) translateZ(1px)'
-                },
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-            TweenMax.to(
-                $eyes, 1, {
-                css: {
-                    transform: 'translateX(' + left / -40 + 'px) translateY(' + top / -40 + 'px) translateZ(0px)'
-                },
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-            TweenMax.to(
-                $nose, 1, {
-                css: {
-                    transform: 'translateX(' + left / -40 + 'px) translateY(' + top / -50 + 'px) translateZ(0px)'
-                },
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-            TweenMax.to(
-                $ear, 1, {
-                css: { transform: 'rotate(' + bottom / -60 + 'deg) translatex(' + left / 60 + 'px) translateY(' + top / 40 + 'px) translateZ(-2px)'},
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-            TweenMax.to(
-                $rightear, 1, {
-                css: {
-                    transform: 'rotate(' + bottom / 60 + 'deg) translatex(' + left / 60 + 'px) translateY(' + top / 40 + 'px) translateZ(-2px)'
-                },
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-            TweenMax.to(
-                $leftleg, 1, {
-                css: {
-                    transform: 'rotate(' + left / 30 + 'deg) translateY(' + top / -100 + 'px) translateZ(-2px)',
-                },
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-            TweenMax.to(
-                $rightleg, 1, {
-                css: {
-                    transform: 'rotate(' + left / 30 + 'deg) translateY(' + top / -100 + 'px) translateZ(-2px)',
-                },
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-            TweenMax.to(
-                $leftpaw, 1, {
-                css: {
-                    transform: 'rotate(' + left / -30 + 'deg) translateY(' + bottom / -120 + 'px) translatex(' + left / -50 + 'px) translateZ(2px)',
-                },
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-            TweenMax.to(
-                $rightpaw, 1, {
-                css: {
-                    transform: 'rotate(' + left / -30 + 'deg) translateY(' + bottom / -120 + 'px) translatex(' + left / -50 + 'px) translateZ(2px)',
-                },
-                ease:Expo.easeOut,
-                overwrite: 'all'
-            });
-        });
-    </script>
-    
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">MySQL</h2>
+                    
+                    <p class="lead">MySQL은 데이터베이스 소프트웨어입니다.
+                        일반적으로 데이터를 추가하거나 검색, 추출하는 기능을 모두
+                        포함해서 데이터베이스라고 부릅니다.
+                    </p>
+                    <p>
+                        "MySQL은 세계에서 가장 많이 쓰이는 오픈 소스의 관계형 데이터베이스
+                        관리 시스템(RDBMS)입니다. MySQL은 PHP 스크립트 언어와 상호 연동이 잘
+                        되면서 오픈소스로 개발된 무료 프로그램입니다. 그래서 홈페이지나 쇼핑몰(워드프레스,
+                        cafe24, 제로보드, 그누보드) 등 일반적으로 웹 개발에 널리 사용하고 있습니다."
+                    </p>
+                    
+                </div>
+                <!-- //Intro1 -->
+
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">MySQL 설치</h2>
+
+                    <h3>MAMP 설치</h3>
+                    <img src="http://silvery92.dothome.co.kr/mySQL/img/mysql.png" alt="">
+
+                    <h3 class="pt30">MAMP 실행</h3>
+                    <div class="bs-callout bs-callout-info">
+                        윈도우 : C:\> cd MAMP/bin/mysql/bin<br>
+                        윈도우 : mysql -uroot -proot<br>
+                    </div>
+<pre class="language-js"><code>C:\MAMP\bin\mysql\bin>mysql -uroot -proot
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.24 MySQL Community Server (GPL)
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+<div class="bs-callout bs-callout-info">
+    맥 : cd /Application/mamp/Library/bin<br>
+    맥 : sudo mysql -uroot -proot
+ </div>
+<pre class="language-js"><code>webstoryboyhwang@Webstoryboyui-MacBookPro bin % sudo ./mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 383
+Server version: 5.7.32 MySQL Community Server (GPL)
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+                </div>
+                <!-- //Intro2 -->
+
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">데이터베이스</h2>
+
+                    <h3 id="intro3-1" class="pt30">데이터베이스 만들기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        create database 데이터베이스 이름  
+                    </div>
+<pre class="language-js"><code>mysql> create database test01;
+Query OK, 1 row affected (0.05 sec)
+</code></pre>
+                    <h3 id="intro3-2" class="pt30">데이터베이스 보기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        show databases; 
+                    </div>
+<pre class="language-js"><code>mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| test01             |
++--------------------+
+5 rows in set (0.02 sec)
+</code></pre>
+                    <h3 id="intro3-3" class="pt30">데이터베이스 사용</h3>
+                    <div class="bs-callout bs-callout-info">
+                        use 데이터베이스 이름; 
+                    </div>
+<pre class="language-js"><code>mysql> use test01;
+Database changed
+</code></pre>
+                    <h3 id="intro3-4" class="pt30">데이터베이스 삭제</h3>
+                    <div class="bs-callout bs-callout-info">
+                        drop database 삭제할 데이터베이스 이름
+                    </div>
+<pre class="language-js"><code>mysql> drop database test1;
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+                </div>
+                <!-- //Intro3 -->
+
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">테이블</h2>
+
+                    <h3 id="intro4-1" class="pt30">테이블 만들기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        CREATE TABLE 테이블 이름; 
+                    </div>
+                    <!--
+                        멤버 아이디
+                        회원 아이디
+                        이름
+                        메일
+                        패스워드
+                        생일
+                        가입한 시간
+                    -->
+<pre class="language-js"><code>CREATE TABLE member (
+    myMemberID int(10) unsigned auto_increment comment "회원의 고유번호",
+    youEmail varchar(40) NOT NULL comment "회원 아이디",
+    youName varchar(12) NOT NULL comment "회원 이름",
+    youPass varchar(20) NOT NULL comment "회원 비밀번호",
+    youBirth varchar(11) NOT NULL comment "회원 생일",
+    regTime int(11) NOT NULL comment "회원 가입 시간",
+    PRIMARY KEY (myMemberID)) 
+    charset=utf8 comment = "회원 정보 테이블";
+</code></pre>
+                    
+
+                    <h3 id="intro4-2" class="pt30">테이블 전체 보기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        SHOW TABLES; 
+                    </div>
+<pre class="language-js"><code>mysql> show tables;
++------------------+
+| Tables_in_test01 |
++------------------+
+| mymember         |
++------------------+
+1 row in set (0.00 sec)
+</code></pre>
+
+                    <h3 id="intro4-3" class="pt30">테이블 보기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        DESC 테이블 이름; 
+                    </div>
+<pre class="language-js"><code>mysql> desc myMember;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(12)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | varchar(11)      | NO   |     | NULL    |                |
+| regTime    | int(11)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+6 rows in set (0.02 sec)
+</code></pre>
+
+                    <h3 id="intro4-4" class="pt30">테이블 삭제</h3>
+                    <div class="bs-callout bs-callout-info">
+                        DROP TABLE 테이블 이름; 
+                    </div>
+<pre class="language-js"><code>mysql> drop table myMember;
+Query OK, 0 rows affected (0.03 sec)  
+</code></pre>
+                </div>
+                <!-- //Intro4 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">테이블 수정</h2>
+
+                    <h3 id="intro5-1" class="pt30">필드 추가하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        ALTER TABLE 테이블명 ADD 추가할 필드명 AFTER 필드 위치;
+                    </div>
+                    
+<pre class="language-js"><code>mysql> ALTER TABLE myMember2 ADD youAge int(3) not null comment "회원의 나이" AFTER youBirth;
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+
+<pre class="language-js"><code>mysql> ALTER TABLE myMember2 ADD youPhone int(11) not null comment "회원의 폰번호" AFTER youAge;
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+
+<pre class="language-js"><code>mysql> ALTER TABLE myMember2 ADD youGender enum('m','w','x') default 'x' comment "남성 m, 여성 w" AFTER youPhone;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+
+<pre class="language-js"><code>mysql> desc myMember2;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(12)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | varchar(11)      | NO   |     | NULL    |                |
+| youAge     | int(3)           | NO   |     | NULL    |                |
+| youPhone   | int(11)          | NO   |     | NULL    |                |
+| youGender  | enum('m','w')    | YES  |     | NULL    |                |
+| regTime    | int(11)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+9 rows in set (0.01 sec)
+</code></pre>
+                    
+                    <h3 id="intro5-2" class="pt30">필드 수정하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        ALTER TABLE 테이블명 MODIFY 수정할 필드명;
+                    </div>
+<pre class="language-js"><code>mysql> ALTER TABLE myMember2 MODIFY youGender enum('m','w');
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+
+                    <h3 id="intro5-3" class="pt30">필드 삭제하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        ALTER TABLE 테이블명 DROP 삭제할 필드명;
+                    </div>
+<pre class="language-js"><code>mysql> ALTER TABLE myMember2 DROP youAge;
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">테이블 데이터</h2>
+
+                    <h3 id="intro6-1" class="pt30">데이터 입력하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        
+                    </div>
+                    
+<pre class="language-js"><code>
+</code></pre>
+                    
+                    <h3 id="intro6-2" class="pt30">데이터 불러오기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        
+                    </div>
+<pre class="language-js"><code>
+</code></pre>
+
+                    <h3 id="intro6-3" class="pt30">데이터 수정하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        
+                    </div>
+<pre class="language-js"><code>
+</code></pre>
+
+                    <h3 id="intro6-4" class="pt30">데이터 삭제하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        
+                    </div>
+<pre class="language-js"><code>
+</code></pre>
+
+                </div>
+                <!-- //Intro6 -->
+
+            </div>
+            <!-- //col-md-9 -->
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">MySQL</a></li>
+                        <li><a href="#intro2">MySQL 설치</a></li>
+                        <li><a href="#intro3">데이터베이스</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro3-1">데이터베이스 만들기</a></li>
+                                <li><a href="#intro3-2">데이터베이스 보기</a></li>
+                                <li><a href="#intro3-3">데이터베이스 사용</a></li>
+                                <li><a href="#intro3-4">데이터베이스 삭제</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro4">테이블</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro4-1">테이블 만들기</a></li>
+                                <li><a href="#intro4-2">테이블 전체 보기</a></li>
+                                <li><a href="#intro4-3">테이블 보기</a></li>
+                                <li><a href="#intro4-4">테이블 삭제</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro5">테이블 수정</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro5-1">필드 추가하기</a></li>
+                                <li><a href="#intro5-2">필드 수정하기</a></li>
+                                <li><a href="#intro5-3">필드 삭제하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro6">테이블 데이터</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro6-1">데이터 입력하기</a></li>
+                                <li><a href="#intro6-2">데이터 불러오기</a></li>
+                                <li><a href="#intro6-3">데이터 수정하기</a></li>
+                                <li><a href="#intro6-4">데이터 삭제하기</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://jihyeh53.github.io/dothome21/index.html">JIHYE</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/docs.min.js"></script>
+    <script src="../assets/js/prism.js"></script>
 </body>
 </html>
