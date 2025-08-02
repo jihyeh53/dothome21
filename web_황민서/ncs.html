@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 평가지</title>
+</head>
+    <style>
+        body{
+            background-color:#fce4ec;
+            color:#ffffff;
+            font-size: 60px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 1200px; 
+            height: 100px;
+            line-height: 100px;
+            background-color:#880e4f;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            line-height: 100px;
+            background-color:#ad1457;
+        }
+        #side {
+            width: 400px;
+            height: 1000px;
+            line-height: 1000px;
+            background-color:#c2185b;
+            float: left;
+        }
+        #content1 {
+            width: 800px;
+            height: 500px;
+            line-height: 500px;
+            background-color:#d81b60;
+            float: left;
+        }
+        #content2 {
+            width: 800px;
+            height: 500px;
+            background-color:#e91e63;
+            float: left;
+        }
+        #cont1{
+            width: 340px;
+            height: 350px;
+            line-height: 350px;
+            background-color: #ec407a;
+            float: left;
+            margin: 75px 20px 75px 40px;
+        }
+        #cont2{
+            width: 340px;
+            height: 350px;
+            line-height: 350px;
+            background-color: #ec407a;
+            float: left;
+            margin: 75px 40px 75px 20px;
+            
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            line-height: 100px;
+            background-color:#f06292;
+            clear: both;
+        }
+    </style>
+<body>
+    <div id="wrap">
+            <div id="header">HEADER</div>
+            <div id="nav">NAV</div>
+            <div id="side">SIDE</div>
+            <div id="content1">CONTENT1</div>
+            <div id="content2">
+                <div id="cont1">
+                    CONT1
+                </div>
+                <div id="cont2">
+                    CONT2
+                </div>
+            </div>
+            <div id="footer">FOOTER</div>
+    </div>
+</body>
+</html>
