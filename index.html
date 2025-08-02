@@ -4,711 +4,592 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML reference</title>
+    <title>Javascript Reference</title>
     <style>
         @font-face {
-        font-family: 'GmarketSansLight';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
         }
         @font-face {
-        font-family: 'GmarketSansMedium';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-        }
-        @font-face {
-        font-family: 'GmarketSansBold';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
         }
         *{
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            /* width: margin + padding */
         }
-        body{
-            background-color: #f5f5f5;
-            font-family: 'GmarketSansLight';
+        ul{
+            list-style: none;
         }
-        #header{
-            padding: 3% 2% 0% 2%;
-            border-bottom: 1px solid #000;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 96%;
-            background-color: #f5f5f5;
-            /*width = margitn + padding + border*/
+        a{
+            text-decoration: none;
         }
-        #header h1{
-            font-family: 'GmarketSansMedium';
-        }
-        #header strong{
-            position: absolute;
-            right: 2%;
-            bottom: 2%;
-        }
-        main h2{
-            font-family: 'GmarketSansBold';
-            font-size: 80px;
-            text-align: center;
-            padding: 15% 5% 5%;
-        }
-        main h2 em{
-            color: #00DB72;
-            font-style: normal;
+        #wrap{
+            margin: 2vh;
+            border: 8px solid#0e43f1;
+            border-radius: 20px;
+            height: 96vh;
+          
         }
         #contents{
-            width: 1200px;
-            margin: 0 auto;
+            border: 8px solid#50b5f9;
+            border-radius: 12px;
+            text-align: center;
+            padding: 5% 2%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
-        .refer{
-            background-color: #fff;
-            padding: 60px;
-            border: 1px solid #000;
-            margin-bottom: 300px;
+        #contents h1 {
+            font-family: 'TmonMonsori';
+            color: #0e43f1;
+            font-size: 8vw;
+            text-transform: uppercase;
         }
-        .refer h3{
+        #contents p a{
+            font-family: 'NEXON Lv1 Gothic OTF';
+            background: #0e43f1;
+            color: #fff;
             display: inline-block;
-            padding: 6px 30px;
-            margin-bottom: 40px;
-            background-color: #00DB72;
-            color: #fff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            margin-bottom: 2%;
+            border-color: 1px solid #fff;
         }
-        .refer h3 a{
-               text-decoration: none;
-               color: #fff;
-           }
-        .refer h3.active{
-            box-shadow: inset 0 -5px 0 0 #068d4c;
+        #contents p a:hover{
+            border-color: 1px solid #0e43f1;
+            background:#fff;
+            color: #0e43f1;
         }
-        .refer table{
-            width: 100%;
-            border: 1px solid #aaa;
-            border-collapse: collapse;
-        }
-        .refer table th{
-            border: 1px solid #aaa;
-            padding: 15px;
-            font-weight: bold;
-            background-color: #f5f5f5;
-        }
-        .refer table td{
-            border: 1px solid #aaa;
-            padding: 15px;
-        }
-        .refer table tr{
-            transition: all 0.3s;
-        }
-        .refer table tr:hover{
-            background-color: #00DB72;
-            color: #fff;
-            cursor: crosshair;
-        }
-        .link li{
-            list-style: none;
-        }
-        .link li a{
-            color: #fff;
-            text-decoration: none;
-            padding: 10px;
-            background: #000;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .link li a:hover{
-            background: #00DB72;
-        }
-        .page{
-            text-align: right;
-            margin-bottom: 3px;
-        }
-        .page li{
+        .menu li{
             display: inline;
-            list-style: none;
         }
-        .page li a{
-            text-decoration: none;
-            color: #222;
+        .menu li a{
+            font-family: 'NEXON Lv1 Gothic OTF';
+            color: #0e43f1;
+            border: 1px dashed#0e43f1;
+            padding: 10px 30px;
+            display: inline-block;
+            border-radius: 50px;
+            font-size: 16px;
+            margin: 4px 1px;
         }
-        .page li a:hover{
-            color: #098a4c;
+        .menu li a:hover{
+            box-shadow: inset 0 -100px 0 #0e43f1;
+            color: #fff;
+            border-style: solid;
         }
-        @media (max-width: 1220px){
+        @media(max-width: 800px){
+            #wrap{
+                height: auto;
+                margin: 0;
+                border-width: 6px;
+                border-radius: 18px;
+            }
             #contents{
-                width: 98%;
+                border-width: 6px;
+                padding: 15% 2%;
             }
-            #header{
-                padding: 6% 2% 2% 2%;
+            #contents p,
+            .menu li a{
+                font-size: 12px;
+                padding: 5px 20px;
             }
         }
-        @media (max-width: 800px){
-            #contents{
-                width: 96%;
+
+        /* dog */
+        .wrap {
+            width: 300px;
+            height: 300px;
+            background: #0066ff;
+            position: relative;
+            box-shadow: 0 -10px 0 0 #0057d9;
+            border-radius: 50%;
+        }
+        .body {
+            width: 150px;
+            height: 60px;
+            background: #fff;
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 75px);
+            border-radius: 40px 40px 0 0;
+            z-index: 4;
+            -webkit-animation: squiggly-anim 0.4s infinite;
+            animation: squiggly-anim 0.4s infinite;
+        }
+        @keyframes squiggly-anim {
+            0% {
+            filter: url("#squiggly-0");
             }
-           #header h1{
-               font-size: 16px;
-           } 
-           #header strong{
-               font-size: 14px;
-               bottom: 10%;
-           }
-           main h2{
-               font-size: 30px;
-               padding: 22% 5% 5%;
-           }
-           .refer{
-               padding: 10px;
-               margin-bottom: 100px;
-           }
-           .refer h3{
-               margin-bottom: 10px;
-               font-size: 16px;
-               padding: 6px 10px;
-           }
-           .refer table th{
-               padding: 8px;
-           }
-           .refer table td{
-               padding: 8px;
-               font-size: 14px;
-           }
+            25% {
+            filter: url("#squiggly-1");
+            }
+            50% {
+            -webkit-filter: url("#squiggly-2");
+            }
+            75% {
+            filter: url("#squiggly-3");
+            }
+            100% {
+            filter: url("#squiggly-4");
+            }
+        }
+        .body .leg {
+            width: 45px;
+            height: 60px;
+            position: absolute;
+            background: #fff;
+            transform-style: preserve-3d;
+            z-index: 2;
+            left: -15px;
+            transform: translateZ(3px);
+            border-radius: 60px 30px 30px 30px;
+            transform-origin: 130% 0%;
+            top: 0px;
+        }
+        .body .leg.r {
+            left: auto;
+            right: -15px;
+            border-radius: 30px 60px 30px 30px;
+            transform-origin: -30% 0%;
+        }
+        .body .leg.r .paw {
+            transform-origin: 100% 0%;
+        }
+        .body .leg .paw {
+            width: 45px;
+            height: 40px;
+            position: absolute;
+            background: #e6e6e6;
+            border-radius: 15px;
+            bottom: 0px;
+            overflow: hidden;
+            left: -2.5px;
+            transform-origin: 0% 0%;
+        }
+        .body .leg .paw:before {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 15px;
+            background: #010101;
+            bottom: 0;
+            left: 12.5px;
+            border-radius: 50px 50px 0 0;
+            box-shadow: 15px 0 0 #010101;
+        }
+        .body .spots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 40px 40px 0 0;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transform: translateZ(2px);
+        }
+        .body .spots:before, body .body .spots:after {
+            content: "";
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            top: 20px;
+            background: #252510;
+            border-radius: 0 20% 100% 0;
+            transform: translateZ(2px);
+        }
+        .body .spots:after {
+            right: 0;
+            border-radius: 20% 0 0 100%;
+        }
+        .body .head {
+            position: absolute;
+            width: 150px;
+            height: 130px;
+            top: -120px;
+            z-index: 3;
+            border-radius: 1600px 1600px 1500px 1500px/2400px 2400px 1200px 1200px;
+            transform-style: preserve-3d;
+            transform: translateZ(1px);
+        }
+        .body .head .inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 1600px 1600px 1500px 1500px/2400px 2400px 1200px 1200px;
+            transform: translateZ(-2px);
+            overflow: hidden;
+        }
+        .body .head .inner .spot {
+            position: absolute;
+            background: #252510;
+            width: 100px;
+            height: 110px;
+            border-radius: 100%;
+            left: -25px;
+            top: -25px;
+            box-shadow: 0 0 0 150px #fff;
+        }
+        .body .head .ear {
+            position: absolute;
+            width: 65px;
+            height: 100px;
+            background: #131308;
+            box-shadow: inset -5px 0 0 15px #252510;
+            top: -50px;
+            z-index: -5;
+            left: -10px;
+            transform-style: preserve-3d;
+            transform: translateZ(-2px);
+            transform-origin: 100% 100%;
+            border-radius: 100px 300px 50px 150px/100px 600px 50px 350px;
+        }
+        .body .head .ear:before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 55px;
+            background: #252510;
+            z-index: -1;
+            transform: translateZ(-3px) rotate(-20deg);
+            border-radius: 0 0 100% 100%;
+            bottom: -35px;
+            left: 20px;
+        }
+        .body .head .ear.right {
+            left: auto;
+            right: -10px;
+            border-radius: 300px 100px 150px 50px/600px 100px 350px 50px;
+            background: #cccccc;
+            box-shadow: inset 5px 0 0 15px #fff;
+            transform-origin: 0% 100%;
+        }
+        .body .head .ear.right:before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 55px;
+            background: #fff;
+            z-index: -1;
+            transform: translateZ(-3px) rotate(20deg);
+            border-radius: 0 0 100% 100%;
+            bottom: -35px;
+            left: auto;
+            right: 20px;
+        }
+        .body .head .eyes {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 100%;
+            top: 35px;
+            left: 30px;
+            overflow: hidden;
+            transform: translateZ(2px);
+        }
+        .body .head .eyes:before,
+        .body .head .eyes:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: #252510;
+            top: 0;
+            left: 0;
+            transform: translateY(-120%);
+            -webkit-animation: blink 5s ease-in-out infinite;
+            animation: blink 5s ease-in-out infinite;
+        }
+        @keyframes blink {
+            90% {
+            transform: translateY(-120%);
+            }
+            92% {
+            transform: translateY(0);
+            }
+            94% {
+            transform: translateY(-120%);
+            }
+            96% {
+            transform: translateY(0);
+            }
+            98% {
+            transform: translateY(-120%);
+            }
+        }
+       .body .head .eyes:after {
+            top: auto;
+            bottom: 0;
+            transform: translateY(120%);
+            -webkit-animation: blink2 5s ease-in-out infinite;
+            animation: blink2 5s ease-in-out infinite;
+        }
+        @keyframes blink2 {
+            90% {
+            transform: translateY(120%);
+            }
+            92% {
+            transform: translateY(0);
+            }
+            94% {
+            transform: translateY(120%);
+            }
+            96% {
+            transform: translateY(0);
+            }
+            98% {
+            transform: translateY(120%);
+            }
+        }
+        .body .head .eyes:nth-of-type(2) {
+            left: auto;
+            right: 30px;
+        }
+        .body .head .eyes:nth-of-type(2):before, 
+        .body .head .eyes:nth-of-type(2):after {
+            background: #fff;
+        }
+        .body .head .snout {
+            position: absolute;
+            width: 80px;
+            height: 70px;
+            background: #fff;
+            border-radius: 45%;
+            left: calc(50% - 40px);
+            bottom: 20px;
+            transform: translateZ(2px);
+        }
+        .body .head .snout .nose {
+            width: 30px;
+            height: 25px;
+            position: absolute;
+            background: black;
+            left: calc(50% - 15px);
+            bottom: 30px;
+            border-radius: 10px;
+        }
+        .body .head .snout .nose:before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background: black;
+            bottom: -8px;
+            left: calc(50% + 1px);
+        }
+        .body .head .snout .nose:after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 20px;
+            border: 2px solid;
+            border-color: black transparent transparent transparent;
+            bottom: -30px;
+            left: 15%;
+            border-radius: 50%;
         }
     </style>
 </head>
 <body>
-    <header id="header">
-        <h1>라인 중학교 1학년 코딩반</h1>
-        <strong>황지혜</strong>
-
-    </header>
-    <!-- header -->
-    <main id="contents">
-        <h2>HTML <em>레퍼런스 북</em></h2>
-        <ul class="page">
-            <li><a href="../refer-html/index.html">HTML</a></li>
-            <li><a href="../refer-css/index.html">CSS</a></li>
-            <li><a href="../javascript/index.html">JAVASCRIPT</a></li>
-            <li><a href="../refer-jquery/index.html">JQUERY</a></li>
-        </ul>
-        <section class="refer">
-            <h3 class="active"><a href="../refer-html/index.html">Alphabet</a></h3>
-            <h3><a href="../refer-html/index2.html">Topics</a></h3>
-           
-            <table>
-                <colgroup>
-                    <col style="width: 30%;">
-                    <col style="width: 70%;">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th>속성</th>
-                        <th>설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>&lt;a&gt;</td>
-                        <td>&lt;a&gt; 태그는 다른 페이지 이동을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;abbr&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;acronym&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;address&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;applet&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;area&gt;</td>
-                        <td>&lt;area&gt; 태그는 이미지 맵의 영역을 정의합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;article&gt;</td>
-                        <td>&lt;article&gt; 태그는 사이트의 독립적인 컨텐츠 섹션을 설정합니다. </td>
-                    </tr>
-                    <tr>
-                        <td>&lt;aside&gt;</td>
-                        <td>&lt;aside&gt; 태그는 주요 콘텐츠의 보조적 컨텐츠 섹션을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;audio&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;b&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;base&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;basefont&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;bdi&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;bdo&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;big&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;blockquote&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;blink&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;body&gt;</td>
-                        <td>&lt;body&gt; 태그는 문서의 타이틀, 스크립트, 스타일, 메타 정보 등을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;br&gt;</td>
-                        <td>&lt;br&gt; 태그는 텍스트 줄바꿈이 필요할 때 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;button&gt;</td>
-                        <td>&lt;button&gt; 태그는 클릭 할 수 있는 버튼을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;canvas&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;caption&gt;</td>
-                        <td>&lt;caption&gt; 태그는 표의 제목을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;center&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;cite&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;code&gt;</td>
-                        <td>&lt;code&gt; 태그는 코드를 나타내는 텍스트를 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;col&gt;</td>
-                        <td>&lt;col&gt; 태그는 &lt;colgroup&gt; 요소에 속하는 각 열의 속성을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;colgroup&gt;</td>
-                        <td>&lt;colgroup&gt; 태그는 표의 열을 묶는 그룹을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;data&gt;</td>
-                        <td>&lt;data&gt; 태그는 주어진 요소의 데이터 값을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;datalist&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;dd&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;del&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;details&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;dfn&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;dialog&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;dir&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;div&gt;</td>
-                        <td>&lt;div&gt; 태그는 문서의 영역을 나누거나 그룹화 할 때 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;dl&gt;</td>
-                        <td>&lt;dl&gt; 태그는 설명 목록을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;dt&gt;</td>
-                        <td>&lt;dt&gt; 태그는 설명 목록 항목의 제목을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;em&gt;</td>
-                        <td>&lt;em&gt; 태그는 텍스트를 강조할 때 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;embed&gt;</td>
-                        <td>&lt;embed&gt; 태그는 외부 콘텐츠를 사용할 수 있도록 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;fieldset&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;figcaption&gt;</td>
-                        <td>&lt;figcaption&gt; 태그는 &lt;figure&gt; 요소의 설명 또는 제목을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;figure&gt;</td>
-                        <td>&lt;figure&gt; 태그는 인용, 도표, 사진, 코드 등의 독립적인 콘텐츠를 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;font&gt;</td>
-                        <td>&lt;font&gt; 태그는 폰트의 크기, 색, 종류를 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;footer&gt;</td>
-                        <td>&lt;footer&gt; 태그는 사이트 관련 정보 및 관련 링크 콘텐츠 섹션을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;form&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;frame&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;frameset&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;h1&gt;~&lt;h6&gt;</td>
-                        <td>&lt;h1&gt;~&lt;h6&gt; 태그는 섹션의 제목 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;head&gt;</td>
-                        <td>&lt;head&gt; 태그는 제목과 스크립트, 스타일 시트, 메타 정보 등을 제공합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;header&gt;</td>
-                        <td>&lt;header&gt; 태그는 사이트의 소개 및 메뉴 그룹을 나타내는 섹션을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;hgroup&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;hr&gt;</td>
-                        <td>&lt;hr&gt; 태그는 단란 요소간의 주제별 구분을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;html&gt;</td>
-                        <td>&lt;html&gt; 태그는 웹 문서의 최상위 요소 문서의 루트를 나타냅니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;i&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;iframe&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;img&gt;</td>
-                        <td>&lt;img&gt; 태그는 웹 문서에 이미지를 정의합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;input&gt;</td>
-                        <td>&lt;input&gt; 태그는 데이터를 입력할 수 있는 폼 컨트롤을 정의합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;ins&gt;</td>
-                        <td>&lt;ins&gt; 태그는 문서에 삽입된 텍스트를 설정합니다</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;kbd&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;keygen&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;label&gt;</td>
-                        <td>&lt;label&gt; 태그는 해당 &lt;input&gt; 요소의 제목을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;legend&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;li&gt;</td>
-                        <td>&lt;li&gt; 태그는 목록의 항목을 나타내는 태그입니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;link&gt;</td>
-                        <td>&lt;link&gt; 태그는 외부 파일 연결 할 때 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;main&gt;</td>
-                        <td>&lt;main&gt; 태그는 문서의 주요 콘텐츠를 정의합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;map&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;mark&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;marquee&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;menu&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;menuitem&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;meta&gt;</td>
-                        <td>&lt;meta&gt; 태그는 웹 문서에 대한 정보를 제공합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;meter&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;nav&gt;</td>
-                        <td>&lt;nav&gt; 태그는 내부 페이지 및 외부 페이지에 대한 탐색 링크를 제공하는 페이지 섹션을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;noframes&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;noscript&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;object&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;ol&gt;</td>
-                        <td>&lt;ol&gt; 태그는 순서가 있는 목록형 태그입니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;optgroup&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;option&gt;</td>
-                        <td>&lt;option&gt; 태그는 &lt;select&gt; 요소의 항목을 정의합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;output&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;p&gt;</td>
-                        <td>&lt;p&gt; 태그는 단락을 나타냅니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;param&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;picture&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;pre&gt;</td>
-                        <td>&lt;pre&gt; 태그는 마크업 소스를 화면 그대로 표현합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;progress&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;q&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;rp&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;rt&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;rtc&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;ruby&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;s&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;samp&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;script&gt;</td>
-                        <td>&lt;script&gt; 태그는 실행 가능한 스크립트 코드를 포함하거나 외부 스크립트를 연결할 수 있습니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;section&gt;</td>
-                        <td>&lt;section&gt; 태그는 주제별 그룹의 콘텐츠 섹션을 나타낼 때 사용하며, 각 섹션에는 &lt;h1&gt;~&lt;h6&gt; 요소를 자식으로 포함시켜 식별해야 합니다. </td>
-                    </tr>
-                    <tr>
-                        <td>&lt;select&gt;</td>
-                        <td>&lt;select&gt; 태그는 선택 목록을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;small&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;source&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;span&gt;</td>
-                        <td>&lt;span&gt; 태그는 콘텐츠 요소를 표현하기 위한 인라인 요소이며, 의미가 없는 그룹화 요소입니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;strike&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;strong&gt;</td>
-                        <td>&lt;strong&gt; 태그는 텍스트의 중요성을 강조할 때 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;style&gt;</td>
-                        <td>&lt;style&gt; 태그는 웹 문서에 스타일 정보를 설정할 수 있습니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;sub&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;summary&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;sup&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;svg&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;table&gt;</td>
-                        <td>&lt;table&gt; 태그는 표를 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;tbody&gt;</td>
-                        <td>&lt;tbody&gt; 태그는 표의 본문 영역을 그룹화합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;td&gt;</td>
-                        <td>&lt;td&gt; 태그는 표의 열(셀)을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;template&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;textarea&gt;</td>
-                        <td>&lt;textarea&gt; 태그는 여러줄의 텍스트를 편집할 수 있습니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;tfoot&gt;</td>
-                        <td>&lt;tfoot&gt; 태그는 표의 푸터 영역을 그룹화합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;th&gt;</td>
-                        <td>&lt;th&gt; 태그는 행이나 열에 타이틀을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;thead&gt;</td>
-                        <td>&lt;thead&gt; 태그는 표의 헤더 영역을 그룹화합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;time&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;title&gt;</td>
-                        <td>&lt;title&gt; 태그는 브라우저의 제목 또는 탭에 표시되는 문서의 제목을 표시합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;tr&gt;</td>
-                        <td>&lt;tr&gt; 태그는 표의 행을 설정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;track&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;tt&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;u&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;ul&gt;</td>
-                        <td>&lt;ul&gt; 태그는 일반적인 글 보다는 목록 형식의 글을 사용할 때 씁니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;var&gt;</td>
-                        <td>&lt;var&gt; 태그는 수학적인 변수나 프로그램의 변수를 쓸 때 사용합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>&lt;video&gt;</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>&lt;wbr&gt;</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
-    <!-- contents  -->
+    <div id="wrap">
+        <main id="contents">
+            <div class="dog">
+                <div class='wrap'>
+                    <div class='body'>
+                        <div class='leg l'>
+                            <div class='paw'></div>
+                        </div>
+                        <div class='leg r'>
+                            <div class='paw'></div>
+                        </div>
+                        <div class='spots'></div>
+                        <div class='head'>
+                            <div class='snout'>
+                                <div class='nose'></div>
+                            </div>
+                            <div class='eyes'></div>
+                            <div class='ear'></div>
+                            <div class='ear right'></div>
+                            <div class='inner'>
+                                <div class='spot'></div>
+                            </div>
+                            <div class='eyes'></div>
+                            <div class='ear'></div>
+                            <div class='ear right'></div>
+                            <div class='inner'>
+                                <div class='spot'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+                    <defs>
+                        <filter id="squiggly-0">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
+                            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
+                        </filter>
+                        <filter id="squiggly-1">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+                        </filter>
+                        <filter id="squiggly-2">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+                        </filter>
+                        <filter id="squiggly-3">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+                        </filter>
+                        <filter id="squiggly-4">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+            <h1>자바스크립트</h1>
+            <p>
+                <a href="index.html">자바스크립트 레퍼런스 북</a>
+                <a href="../refer-jquery/index.html">제이쿼리 레퍼런스 북</a>
+            </p>
+            <nav class="menu">
+                <ul>
+                    <li><a href="javascriptRefer01.html">데이터 저장하기</a></li>
+                    <li><a href="javascriptRefer02.html">데이터 불러오기</a></li>
+                    <li><a href="javascriptRefer03.html">데이터 실행하기</a></li>
+                    <li><a href="javascriptRefer04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascriptRefer05.html">문자열 객체</a></li>
+                    <li><a href="javascriptRefer06.html">배열 객체</a></li>
+                    <li><a href="javascriptRefer07.html">날짜 객체</a></li>
+                    <li><a href="javascriptRefer08.html">수학 객체</a></li>
+                    <li><a href="javascriptRefer09.html">브라우저 객체</a></li>
+                    <li><a href="javascriptRefer10.html">요소 객체</a></li>
+                    <li><a href="javascriptRefer11.html">이벤트 객체</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascriptRefer12.html">샘플</a></li>
+                    <li><a href="javascriptRefer13.html">알고리즘</a></li>
+                </ul>
+            </nav>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script>
+          var $eyes = $('.eyes'),
+            $snout = $('.snout'),
+            $spot = $('.spot'),
+            $nose = $('.nose'),
+            $ear = $('.ear'),
+            $rightear = $('.right'),
+            $leftleg = $('.l'),
+            $rightleg = $('.r'),
+            $leftpaw = $('.l .paw'),
+            $rightpaw = $('.r .paw'),
+            $container = $('.wrap'),
+            $outer = $('body'),
+            container_w = $container.width(),
+            container_h = $container.height();
+        $('body').on('mousemove.parallax', function(event) {
+            var pos_x = event.pageX,
+                pos_y = event.pageY,
+                left = 0,
+                bottom = 0,
+                top = 0;
+                left = container_w / 0.5 - pos_x;
+                top = container_h / 2 - pos_y;
+                bottom = container_h / 0.25 - (pos_y * 2.5);
+            TweenMax.to(
+                $snout, 1, {
+                    css: { transform: 'translateX(' + left / -32 + 'px) translateY(' + top / -26 + 'px) translateZ(1px)'
+                },
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+            TweenMax.to(
+                $spot, 1, {
+                css: {
+                    transform: 'translateX(' + left / -32 + 'px) translateY(' + top / -56 + 'px) translateZ(1px)'
+                },
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+            TweenMax.to(
+                $eyes, 1, {
+                css: {
+                    transform: 'translateX(' + left / -40 + 'px) translateY(' + top / -40 + 'px) translateZ(0px)'
+                },
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+            TweenMax.to(
+                $nose, 1, {
+                css: {
+                    transform: 'translateX(' + left / -40 + 'px) translateY(' + top / -50 + 'px) translateZ(0px)'
+                },
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+            TweenMax.to(
+                $ear, 1, {
+                css: { transform: 'rotate(' + bottom / -60 + 'deg) translatex(' + left / 60 + 'px) translateY(' + top / 40 + 'px) translateZ(-2px)'},
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+            TweenMax.to(
+                $rightear, 1, {
+                css: {
+                    transform: 'rotate(' + bottom / 60 + 'deg) translatex(' + left / 60 + 'px) translateY(' + top / 40 + 'px) translateZ(-2px)'
+                },
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+            TweenMax.to(
+                $leftleg, 1, {
+                css: {
+                    transform: 'rotate(' + left / 30 + 'deg) translateY(' + top / -100 + 'px) translateZ(-2px)',
+                },
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+            TweenMax.to(
+                $rightleg, 1, {
+                css: {
+                    transform: 'rotate(' + left / 30 + 'deg) translateY(' + top / -100 + 'px) translateZ(-2px)',
+                },
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+            TweenMax.to(
+                $leftpaw, 1, {
+                css: {
+                    transform: 'rotate(' + left / -30 + 'deg) translateY(' + bottom / -120 + 'px) translatex(' + left / -50 + 'px) translateZ(2px)',
+                },
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+            TweenMax.to(
+                $rightpaw, 1, {
+                css: {
+                    transform: 'rotate(' + left / -30 + 'deg) translateY(' + bottom / -120 + 'px) translatex(' + left / -50 + 'px) translateZ(2px)',
+                },
+                ease:Expo.easeOut,
+                overwrite: 'all'
+            });
+        });
+    </script>
 </body>
+
 </html>
